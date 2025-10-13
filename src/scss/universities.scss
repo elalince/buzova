@@ -1,0 +1,52 @@
+.universities {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  gap: 62px;
+
+  &__title {
+    position: relative;
+    width: 517px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #3e3e3e;
+    margin: 0 auto;
+
+    p {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-decor {
+      position: absolute;
+
+      &--1 {
+        top: -12px;
+        left: 0;
+        //max-width: 0;
+        overflow: hidden;
+
+        &.shown {
+          max-width: 377px;
+        }
+      }
+      &--2 {
+        bottom: 4px;
+        right: 160px;
+        //max-width: 0;
+        overflow: hidden;
+
+        &.shown {
+          max-width: 210px;
+        }
+      }
+    }
+  }
+
+  &__list {
+
+  }
+}
