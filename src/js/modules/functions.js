@@ -16,15 +16,6 @@ export function showNav() {
         $(navbarList).removeClass('navbar_open')
         $(navbarHeader).removeClass('nav-open')
     });
-
-    // document.addEventListener( 'click', (e) => {
-    //     const withinBoundaries = e.composedPath().includes(navbarList);
-    //     const withinLink = e.composedPath().includes(navbarLink);
-    //
-    //     if ( ! withinBoundaries && ! withinLink ) {
-    //         $(navbarList).removeClass('navbar_open')
-    //     }
-    // })
 }
 export function scrollTo () {
     const anchors = document.querySelectorAll('a[href*="#"]')
@@ -64,61 +55,50 @@ export function mainSlider() {
     });
 }
 
-export function addResume() {
+export function universities() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const universities = document.querySelectorAll('.university');
+        const startEl = document.querySelector('.university--start');
 
-    $('.main-form__input_hidden').click(function(){
-        $(".main-form__input_hidden").click();
+        universities.forEach(university => {
+            university.addEventListener('click', () => {
+                universities.forEach(u => {
+                    u.classList.remove('open');
+                    const inset = u.querySelector('.university__inset');
+                    if (inset) inset.style.overflow = 'hidden';
+                });
+
+                university.classList.add('open');
+                const activeInset = university.querySelector('.university__inset');
+
+                if (activeInset) {
+                    // Сначала скрыто, потом через 0.5с делаем overflow: visible
+                    setTimeout(() => {
+                        activeInset.style.overflow = 'visible';
+                    }, 500);
+                }
+
+                if (startEl) startEl.style.display = 'none';
+            });
+        });
     });
+    document.querySelectorAll('.university').forEach((el, i, all) => {
+        el.addEventListener('mouseenter', () => {
+            const prev = all[i - 1];
+            if (prev) {
+                const decor = prev.querySelector('.universities__decor--1');
+                if (decor) decor.style.right = '-430px';
+            }
+        });
 
-    $('.main-form__input_hidden').change(function() {
-        $('.main-form__selected-file').addClass('visible').text($('.main-form__input_hidden')[0].files[0].name);
+        el.addEventListener('mouseleave', () => {
+            const prev = all[i - 1];
+            if (prev) {
+                const decor = prev.querySelector('.universities__decor--1');
+                if (decor) decor.style.right = ''; // сброс обратно
+            }
+        });
     });
-
-
 
 }
-// export function scrollAnimation() {
-//     const animItems = document.querySelector('.main-info__decor');
-//
-//     if (animItems.length > 0){
-//         function  animOnScroll(){
-//             for (let index = 0; index < animItems.length; index++) {
-//                 const animItem = animItems[index];
-//                 const animItemHeight = animItem.offsetHeight;
-//                 const animItemOffset = offset(animItem).top;
-//                 const animStart = 4;
-//
-//                 let animItemPoint = window.innerHeight - animItemHeight / animStart;
-//
-//                 if (animItemHeight > window.innerHeight) {
-//                     animItemPoint = window.innerHeight - window.innerHeight / animStart;
-//                 }
-//
-//                 if((scrollY >  animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
-//                     animItem.classList.add('_move');
-//                 } else {
-//                     animItem.classList.add('_move');
-//                 }
-//
-//             }
-//
-//
-//         }
-//     }
-//     function offset(el) {
-//         var rect = el.getBoundingClientRect(),
-//             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-//             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//         return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-//     }
-//     animOnScroll();
-//     console.log(animItems.length);
-// }
-// export function textSlice() {
-//
-//     var sliced = document.querySelector('.slider__text').slice(0,10);
-//     if (sliced.length < text.length) {
-//         sliced += '...';
-//     }
-// }
 

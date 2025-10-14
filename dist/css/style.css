@@ -88,6 +88,15 @@ p {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 100px;
+  padding: 16px 60px;
+  height: 47px;
+  background: #45d670;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
 }
 /* header */
 header .header {
@@ -325,4 +334,336 @@ header .header .navbar__item:last-child {
 }
 .universities__title-decor--2.shown {
   max-width: 210px;
+}
+.universities__list {
+  display: flex;
+  justify-content: flex-end;
+  width: 1384px;
+  margin: 0 auto;
+  position: relative;
+}
+.universities .university {
+  display: flex;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+.universities .university:not(.open):hover {
+  margin-right: -20px;
+  border-radius: 0 20px 20px 0;
+  margin-left: -10px;
+}
+.universities .university:not(.open):hover .university__preview {
+  width: 130px;
+  padding: 43px 30px 43px 40px;
+}
+.universities .university--start {
+  background: #e2f9d6;
+  transform: rotate(25deg);
+  margin-right: 125px;
+  pointer-events: none;
+}
+.universities .university--1 {
+  background: #e2f9d6;
+  z-index: 10;
+  margin-left: 0;
+  border-radius: 20px;
+}
+.universities .university--1:hover {
+  border-radius: 20px !important;
+}
+.universities .university--2 {
+  background: #ffedcb;
+  z-index: 9;
+}
+.universities .university--3 {
+  background: #e2f9d6;
+  z-index: 8;
+}
+.universities .university--4 {
+  background: #ffe3f1;
+  z-index: 7;
+}
+.universities .university--5 {
+  background: #e2f9d6;
+  z-index: 6;
+}
+.universities .university--6 {
+  background: #ffedcb;
+  z-index: 5;
+}
+.universities .university--7 {
+  background: #ffe3f1;
+  z-index: 4;
+}
+.universities .university--8 {
+  background: #e2f9d6;
+  z-index: 3;
+}
+.universities .university--9 {
+  background: #ffedcb;
+  z-index: 2;
+}
+.universities .university--10 {
+  background: #e2f9d6;
+  z-index: 1;
+}
+.universities .university__preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  order: 1;
+  width: 100px;
+  height: 640px;
+  padding: 43px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.universities .university__label {
+  font-weight: 500;
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.universities .university__label--1 {
+  color: #45d670;
+}
+.universities .university__label--2 {
+  color: #fbbf4a;
+}
+.universities .university__label--3 {
+  color: #45d670;
+}
+.universities .university__label--4 {
+  color: #f697c6;
+}
+.universities .university__label--5 {
+  color: #45d670;
+}
+.universities .university__label--6 {
+  color: #fbbf4a;
+}
+.universities .university__label--7 {
+  color: #f697c6;
+}
+.universities .university__label--8 {
+  color: #45d670;
+}
+.universities .university__label--9 {
+  color: #fbbf4a;
+}
+.universities .university__label--10 {
+  color: #45d670;
+}
+.universities .university__name {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-top: auto;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #3e3e3e;
+}
+.universities .university__name--start {
+  font-size: 42px;
+}
+.universities .university__inset {
+  width: 0;
+  overflow: hidden;
+  order: 0;
+  transition: width 0.5s ease;
+  z-index: 1;
+}
+.universities .university__content {
+  display: flex;
+  flex-direction: column;
+  padding: 43px 20px 43px 72px;
+  height: 100%;
+  width: 390px;
+}
+.universities .university__content--1 {
+  gap: 28px;
+}
+.universities .university__content--2 {
+  gap: 20px;
+}
+.universities .university__content--3 {
+  gap: 18px;
+}
+.universities .university__content--4 {
+  gap: 28px;
+}
+.universities .university__content--5 {
+  gap: 20px;
+}
+.universities .university__content--6 {
+  gap: 28px;
+}
+.universities .university__content--7 {
+  gap: 20px;
+}
+.universities .university__content--8 {
+  gap: 20px;
+}
+.universities .university__content--9 {
+  gap: 20px;
+}
+.universities .university__content--10 {
+  gap: 20px;
+}
+.universities .university__image {
+  position: relative;
+  width: 298px;
+  height: 217px;
+  border-radius: 20px;
+  background-size: cover;
+}
+.universities .university__image-decor {
+  position: absolute;
+}
+.universities .university__image-decor--0 {
+  width: 124px;
+  height: 124px;
+  right: -45px;
+  bottom: -10px;
+  animation: flower 3s ease-in-out infinite;
+}
+.universities .university__image-decor--1 {
+  width: 209px;
+  height: 208px;
+  left: -80px;
+  top: 0;
+}
+.universities .university__image-decor--2 {
+  width: 240px;
+  height: 240px;
+  top: -80px;
+  left: -110px;
+}
+.universities .university__image-decor--3 {
+  width: 240px;
+  height: 240px;
+  bottom: -60px;
+  left: -110px;
+}
+.universities .university__image-decor--4 {
+  width: 240px;
+  height: 240px;
+  bottom: -40px;
+  left: -130px;
+}
+.universities .university__image-decor--5 {
+  width: 240px;
+  height: 240px;
+  bottom: -60px;
+  left: -110px;
+}
+.universities .university__image-decor--6 {
+  width: 240px;
+  height: 240px;
+  top: -35px;
+  left: -110px;
+}
+.universities .university__image-decor--7 {
+  width: 240px;
+  height: 240px;
+  top: -55px;
+  left: -110px;
+}
+.universities .university__image-decor--8 {
+  width: 240px;
+  height: 240px;
+  bottom: -60px;
+  left: -110px;
+}
+.universities .university__image-decor--9 {
+  width: 240px;
+  height: 240px;
+  top: -80px;
+  left: -110px;
+}
+.universities .university__image-decor--10 {
+  width: 240px;
+  height: 240px;
+  bottom: -40px;
+  right: -100px;
+}
+.universities .university__title {
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #3e3e3e;
+  line-height: 1.1;
+}
+.universities .university__text {
+  font-size: 16px;
+  color: #3e3e3e;
+  line-height: 1.1;
+}
+.universities .university .btn {
+  margin-top: auto;
+  width: 234px;
+}
+.universities .university.open .university__inset {
+  width: 390px;
+}
+.universities__decor {
+  position: absolute;
+  z-index: 12;
+}
+.universities__decor--1 {
+  width: 124px;
+  height: 124px;
+  right: -40px;
+  top: 145px;
+  transition: all 0.5s ease;
+  animation: watermelon 2s ease-in-out infinite;
+}
+.universities__decor--2 {
+  width: 77px;
+  height: 74px;
+  right: -40px;
+  top: 350px;
+  animation: flower 2s ease-in-out infinite;
+}
+.universities__decor--3 {
+  width: 95px;
+  height: 94px;
+  right: -40px;
+  top: 125px;
+  transform: translate(-10px, 50%);
+  animation: bee 2s ease-in-out infinite;
+}
+
+@keyframes flower {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes watermelon {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes bee {
+  0% {
+    transform: rotate(0deg) translate(-10px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-10px) rotate(-360deg);
+  }
 }
