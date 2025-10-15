@@ -83,22 +83,29 @@ export function universities() {
         });
     });
     document.querySelectorAll('.university').forEach((el, i, all) => {
-        el.addEventListener('mouseenter', () => {
-            const prev = all[i - 1];
-            if (prev) {
-                const decor = prev.querySelector('.universities__decor--1');
-                if (decor) decor.style.right = '-430px';
-            }
-        });
+        const prev = all[i - 1];
 
-        el.addEventListener('mouseleave', () => {
-            const prev = all[i - 1];
+        const handleChange = () => {
+            // если текущий элемент активен
+            if (el.classList.contains('open')) {
+            // и если есть предыдущий элемент
             if (prev) {
                 const decor = prev.querySelector('.universities__decor--1');
-                if (decor) decor.style.right = ''; // сброс обратно
+                decor?.classList.add('shifted');
             }
+            } else {
+            // если open снят — убираем эффект
+            if (prev) {
+                const decor = prev.querySelector('.universities__decor--1');
+                decor?.classList.remove('shifted');
+            }
+            }
+        };
+
+        // наблюдаем за изменениями класса .open
+        const observer = new MutationObserver(handleChange);
+        observer.observe(el, { attributes: true, attributeFilter: ['class'] });
         });
-    });
 
 }
 

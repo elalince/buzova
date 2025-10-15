@@ -365,6 +365,11 @@
       top: 145px;
       transition: all .5s ease;
       animation: watermelon 2s ease-in-out infinite;
+
+      &.shifted {
+        right: -430px;
+      }
+
     }
 
     &--2 {
