@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Gotham Pro';
   src: url('../fonts/gothampro_medium.ttf') format('ttf');
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -108,6 +108,7 @@ p {
   background: #45d670;
   font-weight: 700;
   font-size: 20px;
+  line-height: 1;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -122,7 +123,7 @@ p {
       display: block;
       width: 13px;
       height: 23px;
-      margin-left: 10px;
+      margin-left: 20px;
      background: url("data:image/svg+xml;utf8,<svg width='13' height='23' viewBox='0 0 13 23' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M12.4831 12.7776L2.49627 23L0 20.4448L8.73871 11.5L0 2.55515L2.49627 0L12.4831 10.2224C12.8141 10.5613 13 11.0208 13 11.5C13 11.9792 12.8141 12.4387 12.4831 12.7776Z' fill='%23ffffff'/></svg>") center/contain no-repeat;
     }
   }

@@ -109,3 +109,56 @@ export function universities() {
 
 }
 
+export function factsPopup() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const factItems = document.querySelectorAll('.facts__item');
+        const popup = document.querySelector('.facts__popup');
+        const facts = document.querySelectorAll('.fact');
+
+        // --- открыть popup ---
+        factItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const factId = item.dataset.fact;
+                popup.classList.add('active');
+
+                facts.forEach(f => f.classList.remove('active'));
+                const activeFact = popup.querySelector(`.fact[data-popup="${factId}"]`);
+                if (activeFact) activeFact.classList.add('active');
+            });
+        });
+
+        // --- закрытие popup (по крестику или фону) ---
+        popup.addEventListener('click', e => {
+            if (
+                e.target.classList.contains('fact__close') ||
+                e.target.classList.contains('facts__popup')
+            ) {
+                popup.classList.remove('active');
+                facts.forEach(f => f.classList.remove('active'));
+            }
+        });
+
+        // --- переключение на случайный факт ---
+        popup.addEventListener('click', e => {
+            if (e.target.classList.contains('fact__link')) {
+                const currentFact = e.target.closest('.fact');
+                if (!currentFact) return;
+
+                const currentId = currentFact.dataset.popup;
+                const totalFacts = facts.length;
+
+                let randomId;
+                do {
+                    randomId = Math.floor(Math.random() * totalFacts) + 1;
+                } while (randomId == currentId); // исключаем текущий
+
+                // закрываем текущий, открываем новый
+                currentFact.classList.remove('active');
+                const nextFact = popup.querySelector(`.fact[data-popup="${randomId}"]`);
+                if (nextFact) nextFact.classList.add('active');
+            }
+        });
+    });
+}
+
+
