@@ -36,22 +36,19 @@ export function scrollTo () {
 
 
 export function mainSlider() {
-    const slider = new Swiper('.slider', {
+    const slider = new Swiper('.video-block__swiper', {
         direction: 'horizontal',
-        slidesPerView: 'auto',
-        slidesToScroll: 1,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },  
         loop: true,
+        slidesPerView: 1,
+        slidesToScroll: 1,
         simulateTouch: true,
         autoplay: true,
         speed: 3000,
         allowTouchMove: true,
-        breakpoints: {
-           768: {
-               slidesPerView: 3,
-               spaceBetween: 30,
-               centeredSlides: true
-            }
-        }
     });
 }
 

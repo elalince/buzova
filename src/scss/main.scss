@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('../fonts/gothampro_bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
