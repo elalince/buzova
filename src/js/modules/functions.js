@@ -41,7 +41,7 @@ export function mainSlider() {
         effect: 'fade',
         fadeEffect: {
             crossFade: true
-        },  
+        },
         loop: true,
         slidesPerView: 1,
         slidesToScroll: 1,
@@ -170,6 +170,113 @@ export function factsPopup() {
                 if (nextFact) nextFact.classList.add('active');
             }
         });
+    });
+}
+
+export function test() {
+        document.addEventListener('DOMContentLoaded', () => {
+        const startBtn = document.querySelector('.start');
+        const test = document.querySelector('.test');
+        const questionsBlock = document.querySelector('.questions');
+        const questions = document.querySelectorAll('.question');
+        const resultsBlock = document.querySelector('.results');
+        const results = document.querySelectorAll('.result');
+        let answers = [];
+
+        // --- 1️⃣ Старт теста ---
+        startBtn.addEventListener('click', () => {
+        test.style.display = 'flex';
+        questionsBlock.style.display = 'block';
+        showQuestion(0);
+    });
+
+        // --- 2️⃣ Обработка выбора ---
+        questions.forEach((question, index) => {
+        const answerItems = question.querySelectorAll('.answers__item');
+        const nextBtn = question.querySelector('.question__btn');
+
+        answerItems.forEach(item => {
+        item.addEventListener('click', () => {
+        answerItems.forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+
+        nextBtn.style.opacity = '1';
+        nextBtn.style.visibility = 'visible';
+    });
+    });
+
+        // --- 3️⃣ Переход по кнопке ---
+        nextBtn.addEventListener('click', () => {
+        const selected = question.querySelector('.answers__item.selected');
+        if (!selected) return;
+
+        answers[index] = selected.dataset.question;
+
+        hideQuestion(index);
+
+        // без задержки между вопросами
+        if (index < questions.length - 1) {
+        showQuestion(index + 1);
+    } else {
+        showResults();
+    }
+    });
+    });
+
+        // --- показать вопрос ---
+        function showQuestion(i) {
+        const q = questions[i];
+        q.classList.add('active');
+    }
+
+        // --- скрыть вопрос ---
+        function hideQuestion(i) {
+        const q = questions[i];
+        q.classList.remove('active');
+    }
+
+        // --- 4️⃣ Показ результата ---
+        function showResults() {
+        questionsBlock.style.display = 'none';
+        resultsBlock.classList.add('active');
+
+        const counts = { a: 0, b: 0, c: 0, d: 0 };
+        answers.forEach(a => counts[a]++);
+        const maxType = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+
+        results.forEach(r => {
+        if (r.dataset.result === maxType) {
+        r.classList.add('active');
+    } else {
+        r.classList.remove('active');
+    }
+    });
+    }
+
+        // --- 5️⃣ Сброс теста ---
+        results.forEach(result => {
+        const refreshBtn = result.querySelector('.refresh');
+        refreshBtn.addEventListener('click', () => {
+        resultsBlock.classList.remove('active');
+        results.forEach(r => r.classList.remove('active'));
+
+        setTimeout(() => {
+        resultsBlock.style.display = 'none';
+        questionsBlock.style.display = 'block';
+
+        questions.forEach(q => {
+        q.classList.remove('active');
+        q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
+        const btn = q.querySelector('.question__btn');
+        btn.style.opacity = '0';
+        btn.style.visibility = 'hidden';
+    });
+
+        answers = [];
+        showQuestion(0);
+    }, 300);
+    });
+    });
     });
 }
 

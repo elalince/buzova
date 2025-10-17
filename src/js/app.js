@@ -4,6 +4,8 @@ flsFunctions.showNav();
 flsFunctions.universities();
 flsFunctions.factsPopup();
 flsFunctions.mainSlider();
+flsFunctions.test();
+
 
 
 
