@@ -46,9 +46,24 @@ export function mainSlider() {
         slidesPerView: 1,
         slidesToScroll: 1,
         simulateTouch: true,
-        autoplay: true,
-        speed: 3000,
+        autoplay: false,
+        speed: 1000,
         allowTouchMove: true,
+        // Pagination (числа вместо обычных буллетов)
+        pagination: {
+            el: '.video-block__pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                // index — начинается с 0, поэтому +1
+                const number = index + 1;
+                return `<button class="${className}" aria-label="Перейти к слайду ${number}">${number}</button>`;
+            }
+        },
+        // Navigation (prev/next buttons)
+        navigation: {
+            nextEl: '.video-block__button-next',
+            prevEl: '.video-block__button-prev',
+        },
     });
 }
 
