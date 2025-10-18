@@ -5,7 +5,7 @@ flsFunctions.universities();
 flsFunctions.factsPopup();
 flsFunctions.mainSlider();
 flsFunctions.test();
-
-
+flsFunctions.flourish();
+flsFunctions.footer();
 
 

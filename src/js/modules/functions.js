@@ -174,7 +174,7 @@ export function factsPopup() {
 }
 
 export function test() {
-        document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
         const startBtn = document.querySelector('.start');
         const test = document.querySelector('.test');
         const questionsBlock = document.querySelector('.questions');
@@ -183,101 +183,171 @@ export function test() {
         const results = document.querySelectorAll('.result');
         let answers = [];
 
-        // --- 1️⃣ Старт теста ---
-        startBtn.addEventListener('click', () => {
-        test.style.display = 'flex';
-        questionsBlock.style.display = 'block';
-        showQuestion(0);
-    });
+        // --- старт ---
+        startBtn?.addEventListener('click', () => {
+            test.style.display = 'flex';
+            questionsBlock.style.display = 'block';
+            showQuestion(0);
+        });
 
-        // --- 2️⃣ Обработка выбора ---
+        // --- обработка вопросов ---
         questions.forEach((question, index) => {
-        const answerItems = question.querySelectorAll('.answers__item');
-        const nextBtn = question.querySelector('.question__btn');
+            const answerItems = question.querySelectorAll('.answers__item');
+            const nextBtn = question.querySelector('.question__btn');
 
-        answerItems.forEach(item => {
-        item.addEventListener('click', () => {
-        answerItems.forEach(i => i.classList.remove('selected'));
-        item.classList.add('selected');
+            answerItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    answerItems.forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
 
-        nextBtn.style.opacity = '1';
-        nextBtn.style.visibility = 'visible';
-    });
-    });
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.visibility = 'visible';
+                });
+            });
 
-        // --- 3️⃣ Переход по кнопке ---
-        nextBtn.addEventListener('click', () => {
-        const selected = question.querySelector('.answers__item.selected');
-        if (!selected) return;
+            nextBtn.addEventListener('click', () => {
+                const selected = question.querySelector('.answers__item.selected');
+                if (!selected) return;
 
-        answers[index] = selected.dataset.question;
+                // 🔧 читаем правильный атрибут
+                const chosen = selected.dataset.answer?.toLowerCase();
+                answers[index] = chosen;
+                console.log(`Ответ ${index + 1}:`, chosen);
 
-        hideQuestion(index);
+                hideQuestion(index);
 
-        // без задержки между вопросами
-        if (index < questions.length - 1) {
-        showQuestion(index + 1);
-    } else {
-        showResults();
-    }
-    });
-    });
+                if (index < questions.length - 1) {
+                    showQuestion(index + 1);
+                } else {
+                    showResults();
+                }
+            });
+        });
 
-        // --- показать вопрос ---
         function showQuestion(i) {
-        const q = questions[i];
-        q.classList.add('active');
-    }
+            questions[i].classList.add('active');
+        }
 
-        // --- скрыть вопрос ---
         function hideQuestion(i) {
-        const q = questions[i];
-        q.classList.remove('active');
-    }
+            questions[i].classList.remove('active');
+        }
 
-        // --- 4️⃣ Показ результата ---
+        // --- результаты ---
         function showResults() {
-        questionsBlock.style.display = 'none';
-        resultsBlock.classList.add('active');
+            console.log('Все ответы:', answers);
+            questionsBlock.style.display = 'none';
+            resultsBlock.classList.add('active');
 
-        const counts = { a: 0, b: 0, c: 0, d: 0 };
-        answers.forEach(a => counts[a]++);
-        const maxType = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+            const counts = {a: 0, b: 0, c: 0, d: 0};
+            answers.forEach(a => {
+                if (a && counts[a] !== undefined) counts[a]++;
+            });
 
-        results.forEach(r => {
-        if (r.dataset.result === maxType) {
-        r.classList.add('active');
-    } else {
-        r.classList.remove('active');
-    }
-    });
-    }
+            console.log('Подсчёт:', counts);
 
-        // --- 5️⃣ Сброс теста ---
+            // выбираем максимальный
+            const maxType = Object.keys(counts).reduce((a, b) =>
+                counts[a] >= counts[b] ? a : b
+            );
+
+            console.log('Результат:', maxType);
+
+            results.forEach(r => {
+                if (r.dataset.result?.toLowerCase() === maxType) {
+                    r.classList.add('active');
+                } else {
+                    r.classList.remove('active');
+                }
+            });
+        }
+
+        // --- сброс ---
         results.forEach(result => {
-        const refreshBtn = result.querySelector('.refresh');
-        refreshBtn.addEventListener('click', () => {
-        resultsBlock.classList.remove('active');
-        results.forEach(r => r.classList.remove('active'));
+            const refreshBtn = result.querySelector('.refresh');
+            refreshBtn?.addEventListener('click', () => {
+                resultsBlock.classList.remove('active');
+                results.forEach(r => r.classList.remove('active'));
 
-        setTimeout(() => {
-        resultsBlock.style.display = 'none';
-        questionsBlock.style.display = 'block';
+                setTimeout(() => {
+                    resultsBlock.classList.remove('active');
+                    questionsBlock.style.display = 'block';
 
-        questions.forEach(q => {
-        q.classList.remove('active');
-        q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
-        const btn = q.querySelector('.question__btn');
-        btn.style.opacity = '0';
-        btn.style.visibility = 'hidden';
-    });
+                    questions.forEach(q => {
+                        q.classList.remove('active');
+                        q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
+                        const btn = q.querySelector('.question__btn');
+                        btn.style.opacity = '0';
+                        btn.style.visibility = 'hidden';
+                    });
 
-        answers = [];
-        showQuestion(0);
-    }, 300);
-    });
-    });
+                    answers = [];
+                    showQuestion(0);
+                }, 300);
+            });
+        });
     });
 }
 
 
+
+export function flourish() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedBlocks = document.querySelectorAll('.animated');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('shown');
+                    observer.unobserve(entry.target); // чтобы не срабатывало повторно
+                }
+            });
+        }, {
+            threshold: 0.2 // элемент виден хотя бы на 20%
+        });
+
+        animatedBlocks.forEach(block => observer.observe(block));
+    });
+}
+
+export function footer() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const teamLink = document.querySelector('.footer__team-link');
+        const teamBlock = document.querySelector('.footer__team-block');
+        const copyright = document.querySelector('.footer__copyright');
+
+        if (teamLink && teamBlock && copyright) {
+            let isHovered = false;
+
+            const showTeam = () => {
+                copyright.style.opacity = '0';
+                copyright.style.visibility = 'hidden';
+                teamBlock.style.opacity = '1';
+                teamBlock.style.visibility = 'visible';
+            };
+
+            const hideTeam = () => {
+                copyright.style.opacity = '1';
+                copyright.style.visibility = 'visible';
+                teamBlock.style.opacity = '0';
+                teamBlock.style.visibility = 'hidden';
+            };
+
+            const handleEnter = () => {
+                isHovered = true;
+                showTeam();
+            };
+
+            const handleLeave = () => {
+                isHovered = false;
+                setTimeout(() => {
+                    if (!isHovered) hideTeam();
+                }, 100); // лёгкая задержка для стабильности
+            };
+
+            teamLink.addEventListener('mouseenter', handleEnter);
+            teamLink.addEventListener('mouseleave', handleLeave);
+            teamBlock.addEventListener('mouseenter', handleEnter);
+            teamBlock.addEventListener('mouseleave', handleLeave);
+        }
+    });
+}

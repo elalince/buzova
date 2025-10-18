@@ -19,11 +19,22 @@
         }
 
         &-decor {
-            width: 403px;
+            height: 68px;
+            max-width: 0;
+            overflow: hidden;
             position: absolute;
             top: -10px;
             left: -20px;
             z-index: 1;
+            transition: all .7s ease-in-out;
+
+            img {
+                height: 68px;
+            }
+
+            &.shown {
+                max-width: 403px;
+            }
         }
     }
 

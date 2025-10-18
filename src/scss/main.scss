@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
 @font-face {
   font-family: 'Gotham Pro';
   src: local('Gotham Pro'),
@@ -181,6 +183,7 @@ header {
         color: #fff;
         font-weight: 700;
         font-size: 16px;
+        line-height: 29px;
         text-transform: uppercase;
 
         &:last-child {
@@ -189,9 +192,88 @@ header {
         }
       }
     }
+
+    &__btn {
+      font-size: 16px;
+      line-height: 29px;
+      gap: 8px;
+      padding: 8px 30px;
+      width: 196px;
+      height: 29px;
+    }
   }
 }
 
+
+.footer {
+  border-radius: 20px;
+  height: 86px;
+  padding: 0 37px;
+  background: #e2f9d6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    font-family: "Roboto Flex", sans-serif;
+  }
+
+  &__copyright {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 71%;
+    letter-spacing: 0.05em;
+    color: #3e3e3e;
+    transition: all .3s ease;
+  }
+
+  &__team-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 71%;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #3e3e3e;
+    cursor: pointer;
+  }
+
+  &__team-block {
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    width: 505px;
+    font-size: 12px;
+    line-height: 108%;
+    letter-spacing: 0.05em;
+    color: #3e3e3e;
+    background: #e2f9d6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+  }
+
+  &__logos {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+  }
+}
 
 /* navbar example */
 
