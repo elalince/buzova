@@ -159,7 +159,7 @@
                 &:first-child {
                     background: #e2f9d6;
                     z-index: 10;
-                    margin-left: 0; 
+                    margin-left: 0;
                     padding: 10px 30px;
                 }
 
@@ -175,7 +175,7 @@
 
                 &:nth-child(4) {
                     background: #ffe3f1;
-                    z-index: 7; 
+                    z-index: 7;
                 }
 
                 &:nth-child(5) {
@@ -241,13 +241,12 @@
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
-            /* явно включаем события для кнопок, если где-то выше отключены */
             pointer-events: auto;
             background: url("data:image/svg+xml;utf8,<svg width='20' height='36' viewBox='0 0 20 36' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M19.2048 16.0003L3.84039 0L0 3.99937L13.4442 18L0 32.0006L3.84039 36L19.2048 19.9997C19.7139 19.4693 20 18.75 20 18C20 17.25 19.7139 16.5307 19.2048 16.0003Z' fill='%2345D670'/></svg>") center/contain no-repeat;
 
             &-prev {
                 transform: rotate(180deg);
-             
+
             }
         }
     }

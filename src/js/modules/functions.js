@@ -67,6 +67,33 @@ export function mainSlider() {
     });
 }
 
+export function insetSlider() {
+    const slider = new Swiper('.inset__slider', {
+        direction: 'horizontal',
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        loop: true,
+        slidesPerView: 1,
+        slidesToScroll: 1,
+        simulateTouch: true,
+        autoplay: false,
+        speed: 1000,
+        allowTouchMove: true,
+        // Pagination (числа вместо обычных буллетов)
+        pagination: {
+            el: '.inset__pagination',
+            clickable: true,
+        },
+        // Navigation (prev/next buttons)
+        navigation: {
+            nextEl: '.inset__button-next',
+            prevEl: '.inset__button-prev',
+        },
+    });
+}
+
 export function universities() {
     document.addEventListener('DOMContentLoaded', () => {
         const universities = document.querySelectorAll('.university');
@@ -348,6 +375,19 @@ export function footer() {
             teamLink.addEventListener('mouseleave', handleLeave);
             teamBlock.addEventListener('mouseenter', handleEnter);
             teamBlock.addEventListener('mouseleave', handleLeave);
+        }
+    });
+}
+export function bodyClacc() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const topUniversity = document.querySelector('.top-university');
+
+        if (topUniversity) {
+            const pageNumber = topUniversity.dataset.page;
+            if (pageNumber) {
+                document.body.classList.add(`university-page`);
+                document.body.classList.add(`university-page--${pageNumber}`);
+            }
         }
     });
 }

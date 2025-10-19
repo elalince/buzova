@@ -204,6 +204,10 @@ header {
   }
 }
 
+.animated {
+  transition: all .7s ease-in-out;
+  overflow: hidden;
+}
 
 .footer {
   border-radius: 20px;
@@ -241,6 +245,10 @@ header {
     text-decoration-skip-ink: none;
     color: #3e3e3e;
     cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &__team-block {
