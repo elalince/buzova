@@ -326,13 +326,12 @@
         }
 
         &--3 {
-          width: 539px;
-          height: 462px;
-          left: 95px;
-          top: 0;
+          width: 445px;
+          height: 423px;
+          left: 140px;
+          top: -15px;
           z-index: 3;
         }
-
 
         &--4 {
           width: 286px;
@@ -349,6 +348,29 @@
           bottom: 0;
           z-index: 5;
         }
+      }
+    }
+
+    &__beige {
+      position: relative;
+      width: 445px;
+      height: 423px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px;
+      transform: rotate(-15deg);
+
+      img {
+        width: 422px;
+      }
+
+      .beige {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 444px;
+        height: 423px;
       }
     }
   }
