@@ -13,6 +13,11 @@
     .top-block__label {
       color: #45d670;
     }
+    .top-block__subtitle-decor div {
+      height: 49px;
+      width: 510px;
+      background-image: url(@img/flourish-inset-1.svg);
+    }
 
     .top-block__decor {
       div {
@@ -44,6 +49,11 @@
       color: #fbbf4a;
     }
 
+    .top-block__subtitle-decor div {
+      height: 101px;
+      width: 5595px;
+      background-image: url(@img/flourish-inset-2.svg);
+    }
     .top-block__decor {
       div {
         background-image: url(@img/flourish-mobile-3.svg);
@@ -73,6 +83,12 @@
       color: #45d670;
     }
 
+    .top-block__subtitle-decor div {
+      height: 101px;
+      width: 595px;
+      background-image: url(@img/flourish-inset-3.svg);
+    }
+
     .top-block__decor {
       div {
         background-image: url(@img/flourish-mobile-2.svg);
@@ -99,6 +115,11 @@
 
     .top-block__label {
       color: #f697c6;
+    }
+    .top-block__subtitle-decor div {
+      height: 101px;
+      width: 595px;
+      background-image: url(@img/flourish-inset-4.svg);
     }
 
     .top-block__decor {
@@ -127,6 +148,12 @@
 
     .top-block__label {
       color: #45d670;
+    }
+
+    .top-block__subtitle-decor div {
+      height: 121px;
+      width: 604px;
+      background-image: url(@img/flourish-inset-5.svg);
     }
 
     .top-block__decor {
@@ -158,6 +185,12 @@
       color: #fbbf4a;
     }
 
+    .top-block__subtitle-decor div {
+      height: 100px;
+      width: 457px;
+      background-image: url(@img/flourish-inset-6.svg);
+    }
+
     .top-block__decor {
       div {
         background-image: url(@img/flourish-mobile-3.svg);
@@ -187,6 +220,12 @@
       color: #f697c6;
     }
 
+    .top-block__subtitle-decor div {
+      height: 101px;
+      width: 595px;
+      background-image: url(@img/flourish-inset-4.svg);
+    }
+
     .top-block__decor {
       div {
         background-image: url(@img/flourish-mobile-4.svg);
@@ -213,6 +252,12 @@
 
     .top-block__label {
       color: #45d670;
+    }
+
+    .top-block__subtitle-decor div {
+      height: 121px;
+      width: 604px;
+      background-image: url(@img/flourish-inset-5.svg);
     }
 
     .top-block__decor {
@@ -244,6 +289,12 @@
       color: #fbbf4a;
     }
 
+    .top-block__subtitle-decor div {
+      height: 100px;
+      width: 457px;
+      background-image: url(@img/flourish-inset-6.svg);
+    }
+
     .top-block__decor {
       div {
         background-image: url(@img/flourish-mobile-3.svg);
@@ -273,6 +324,12 @@
       color: #45d670;
     }
 
+    .top-block__subtitle-decor div {
+      height: 101px;
+      width: 595px;
+      background-image: url(@img/flourish-inset-3.svg);
+    }
+
     .top-block__decor {
       div {
         background-image: url(@img/flourish-mobile-2.svg);
@@ -297,10 +354,6 @@
   }
 
   .top-university {
-    .top-block__content {
-      margin-right: -30px;
-    }
-
      .top-block__label {
        width: auto;
      }
