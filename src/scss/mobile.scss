@@ -1,4 +1,4 @@
-@media  (max-width: 767px) {
+@media  (max-width: 544px) {
     body {
         padding: 8px;
     }
@@ -33,7 +33,7 @@
 
             &.open {
                 height: calc(100vh - 16px);
-                background: #e2f9d6;
+                background: #e2f9d6 !important;
                 padding: 11px 8px 0 8px;
                 border-radius: 20px;
             }

@@ -2437,7 +2437,7 @@ header .header__copyright {
   opacity: 1;
 }
 
-@media (max-width: 1440px) and (min-width: 767px) {
+@media (max-width: 1440px) and (min-width: 545px) {
   body {
     font-size: 0.9722vw;
     padding: 0.9722vw 0;
@@ -3514,7 +3514,7 @@ header .header__copyright {
     height: 0.7639vw;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 544px) {
   body {
     padding: 8px;
   }
@@ -3545,7 +3545,7 @@ header .header__copyright {
   }
   header .header.open {
     height: calc(100vh - 16px);
-    background: #e2f9d6;
+    background: #e2f9d6 !important;
     padding: 11px 8px 0 8px;
     border-radius: 20px;
   }
