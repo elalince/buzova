@@ -1,0 +1,681 @@
+@media (max-width: 544px) {
+    body {
+        padding: 2.13vw;
+    }
+
+ 
+
+    // header {
+    //     left: 2.13vw;
+    //     right: 2.13vw;
+    //     .header {
+    //         height: 12vw;
+    //         padding: 2.93vw 2.13vw;
+    //         &__nav {
+    //             gap: 5.87vw;
+    //             min-height: calc(100vh - 12vw);
+    //         }
+
+    //         &.open {
+    //             height: calc(100vh - 4.27vw);
+    //             padding: 2.93vw 2.13vw 0 2.13vw;
+    //             border-radius: 5.33vw;
+    //         }
+
+    //         .navbar-btn {
+    //             top: 2.93vw;
+    //             left: 4.27vw;
+    //         }
+
+    //         .navbar {
+    //             gap: 9.87vw;
+    //             &__item {
+    //                 border-radius: 46.93vw;
+    //                 padding: 3.73vw 13.87vw;
+    //                 height: 13.6vw;
+    //                 font-size: 7.47vw;
+    //             }
+    //         }
+
+    //         .logo {
+    //         }
+
+    //         &__copyright {
+    //             font-size: 3.73vw;
+    //             margin-top: 5.33vw;
+    //         }
+
+    //         &__btn {
+    //             width: 5.33vw;
+    //             img {
+    //             }
+    //         }
+    //     }
+    // }
+
+    .top-block {
+        &__image {
+            &-decor {
+                &--1 {
+                    width: 85.87vw;
+                    left: 2.67vw;
+                }
+
+                &--2 {
+                    width: 8vw;
+                    height: 8vw;
+                    top: 32vw;
+                    left: 5.33vw;
+                }
+
+                &--3 {
+                    width: 11.47vw;
+                    height: 11.47vw;
+                    top: 52.53vw;
+                    right: 6.93vw;
+                }
+            }
+        }
+
+        &__content {
+            margin-top: 5.33vw;
+            padding-bottom: 16vw;
+        }
+
+        &__title {
+            font-size: 12.8vw;
+        }
+
+
+        &__text {
+            font-size: 4.8vw;
+        }
+
+        &__decor {
+            top: 76vw;
+            height: 30.93vw;
+            & > div {
+                width: 95.2vw;
+                height: 30.93vw;
+            }
+
+            &.shown {
+                width: 95.2vw;
+            }
+        }
+    }
+
+    .universities {
+        gap: 10.67vw;
+        &__title {
+            &-decor--1 {
+                left: 26.67vw;
+            }
+
+            &-decor--2 {
+                right: 20vw;
+            }
+        }
+
+
+
+        .university {
+      
+            &__preview {
+                height: 16.8vw;
+                padding: 3.2vw 5.33vw;
+            }
+
+            &__label {
+                font-size: 8.53vw;
+            }
+    
+
+            &__name {
+                font-size: 4.27vw;
+                &--start {
+                    font-size: 6.93vw;
+                }
+            }
+
+
+            &__content {
+                padding: 5.33vw;
+            }
+
+            &__image {
+                height: 53.33vw;
+                &-decor {
+                    &--1, &--2, &--3, &--4, &--5, &--6, &--7, &--8, &--9, &--10 {
+                        width: 56vw;
+                        height: 56vw;
+                    }
+
+                    &--1 {
+                        left: -14.67vw;
+                        top: -5.33vw;
+                    }
+
+                    &--2 {
+                        top: -10.67vw;
+                        left: -18.67vw;
+                    }
+
+                    &--3 {
+                        bottom: -16vw;
+                        left: -18.67vw;
+                    }
+
+                    &--4 {
+                        bottom: -5.33vw;
+                        left: -18.67vw;
+                    }
+
+                    &--5 {
+                        bottom: -8vw;
+                        left: -14.67vw;
+                    }
+
+                    &--6 {
+                        top: -18.67vw;
+                        left: -18.67vw;
+                    }
+
+                    &--7 {
+                        top: -8vw;
+                        left: -14.67vw;
+                    }
+
+                    &--8 {
+                        bottom: -8vw;
+                        left: -14.67vw;
+                    }
+
+                    &--9 {
+                        top: -13.33vw;
+                        left: -18.67vw;
+                    }
+
+                    &--10 {
+                        right: -16vw;
+                    }
+                }
+            }
+
+            &.open {
+                .university__inset {
+                    max-height: 266.7vw;
+                }
+
+    
+            }
+        }
+
+        &__decor {
+            &--1 {
+                width: 21.87vw;
+                top: 5.33vw;
+                left: 13.33vw;
+        
+            }
+
+            &--2 {
+                width: 11.47vw;
+                height: 12vw;
+                right: 53.33vw;
+                top: 28vw;
+            }
+
+            &--3 {
+                width: 14.13vw;
+                height: 14.4vw;
+                right: 53.33vw;
+                top: 12vw;
+            }
+        }
+    }
+
+    .facts {
+        padding-top: 19.73vw;
+        gap: 5.33vw;
+
+        &__title {
+            font-size: 6.93vw;
+
+            &-decor {
+                height: 9.87vw;
+                left: 13.33vw;
+                top: -1.33vw;
+
+                div {
+                    width: 61.6vw;
+                    height: 9.87vw;
+                }
+
+                &.shown {
+                    max-width: 61.6vw;
+                }
+            }
+        }
+
+        &__list {
+            gap: 1.07vw;
+        }
+
+        &__item {
+            height: 45.07vw !important;
+            padding: 5.87vw;
+
+            &-number {
+                font-size: 14.13vw;
+            }
+
+            &-title {
+                font-size: 6.13vw;
+            }
+
+            &-image {
+                &--1 {
+                    width: 30.4vw;
+                    height: 37.07vw;
+                    top: 4vw;
+                    right: 5.33vw;
+                }
+
+                &--2 {
+                    width: 40.8vw;
+                    height: 45.07vw;
+                }
+
+                &--5 {
+                    width: 60.27vw;
+                    height: 34.67vw;
+                    top: 5.33vw;
+                    right: -13.33vw;
+                }
+
+                &--7 {
+                    width: 28vw;
+                    height: 39.73vw;
+                }
+            }
+
+            &-decor {
+                &--1 {
+                    width: 8vw;
+                    height: 8vw;
+                    top: 8vw;
+                    right: 5.33vw;
+                }
+
+                &--5 {
+                    width: 58.67vw;
+                    height: 31.73vw;
+                    top: -1.87vw;
+                    left: -9.33vw;
+                }
+            }
+        }
+
+        &__popup {
+            top: 2.13vw;
+            left: 2.13vw;
+            right: 2.13vw;
+            bottom: 2.13vw;
+        }
+
+        .fact {
+            padding: 6.67vw;
+
+            &__number {
+                font-size: 8.53vw;
+            }
+
+            &__close {
+                width: 8.27vw;
+                height: 8.27vw;
+            }
+
+            &__image {
+                height: 58.67vw;
+            }
+
+            &__content {
+                margin-top: 2.67vw;
+                gap: 2.67vw;
+            }
+
+            &__title {
+                font-size: 9.07vw;
+            }
+
+            &__text {
+                font-size: 4.27vw !important;
+                max-height: 50.67vw;
+                min-height: 50.67vw;
+                margin-left: -4vw;
+                padding-left: 4vw;
+
+                &::-webkit-scrollbar {
+                    width: 0.8vw;
+                }
+            }
+        }
+    }
+
+        .video {
+        padding: 13.33vw 0;
+
+        .video-block {
+            &__title {
+                font-size: 12.8vw;
+            }
+
+            &__content {
+                gap: 4vw;
+            }
+
+            &__swiper {
+                padding-top: 9.6vw;
+            }
+
+            &__slide-wrapper {
+                height: 55.73vw;
+                padding: 2.13vw;
+                border-radius: 0 0 5.33vw 5.33vw;
+            }
+
+            &__container {
+                height: 51.2vw;
+            }
+
+            &__slide-title {
+                font-size: 4.27vw;
+            }
+
+            &__pagination {
+                .swiper-pagination-bullet {
+                    border-radius: 2.93vw 2.93vw 0 0;
+                    padding: 1.33vw 3.73vw 1.07vw 6.13vw;
+                    width: 12.53vw;
+                    height: 4.27vw;
+                    font-size: 2.4vw;
+                    margin: 5.33vw 0 0 -4vw;
+
+                    &:first-child {
+                        padding: 1.07vw 3.73vw;
+                    }
+
+                    &.swiper-pagination-bullet-active {
+                        border-radius: 2.67vw 2.67vw 0 0;
+                        padding: 1.07vw 3.73vw;
+                        width: 18.93vw;
+                        height: 7.2vw;
+                        font-size: 3.73vw;
+                    }
+                }
+            }
+
+            &__navigation {
+                bottom: 2.13vw;
+            }
+        }
+    }
+
+    .test-block {
+        &__container {
+            padding-top: 27.47vw;
+            padding-bottom: 50.67vw;
+            gap: 6.4vw;
+        }
+
+        &__image {
+            &--1 {
+                width: 44.53vw;
+                height: 21.6vw;
+                top: -0.8vw;
+                right: -13.07vw;
+            }
+
+            &--4 {
+                width: 52vw;
+                height: 36vw;
+            }
+
+            &--3 {
+                width: 54.93vw;
+                height: 77.33vw;
+                top: -18.67vw;
+                left: -13.33vw;
+            }
+
+            &--6 {
+                width: 53.33vw;
+                bottom: 12vw;
+                right: -26.13vw;
+            }
+
+            &-decor--1 {
+                width: 56.53vw;
+                height: 56.53vw;
+                left: -24vw;
+                bottom: -10.67vw;
+            }
+        }
+
+        &__title {
+            font-size: 12.8vw;
+        }
+
+        &__text {
+            max-width: 80vw;
+        }
+    }
+
+    .test {
+        .question {
+            padding: 4.27vw;
+            top: 16vw;
+            gap: 4.8vw;
+
+            &__title {
+                font-size: 4.8vw;
+            }
+
+            .answers {
+                gap: 2.13vw;
+
+                &__item {
+                    font-size: 4.27vw;
+                    padding: 3.2vw;
+                    height: 24vw;
+                }
+            }
+
+            &__image {
+                &--1 {
+                    width: 48vw;
+                    height: 29.33vw;
+                    left: -10.67vw;
+                }
+
+                &--2 {
+                    width: 39.2vw;
+                    height: 32.8vw;
+                    right: -6.67vw;
+                    top: -6.67vw;
+                }
+            }
+        }
+
+        .results {
+            .result {
+                padding: 16vw 4.27vw;
+                gap: 4.27vw;
+
+                &__content {
+                    gap: 4.27vw;
+                }
+
+                &__title {
+                    font-size: 7.47vw;
+                    margin-bottom: 56vw;
+                }
+
+                &__image {
+                    width: 87.2vw;
+                    height: 51.73vw;
+                    top: 41.33vw;
+                }
+
+                &--3 {
+                    .result__text {
+                        font-size: 3.47vw;
+                    }
+                }
+            }
+        }
+    }
+        .footer {
+        padding: 8vw;
+        gap: 6.13vw;
+
+        &__team-block {
+            padding: 8vw;
+        }
+
+        &__logos {
+            height: 19.2vw;
+        }
+    }
+
+    .university-page {
+        .top-university {
+            &__image {
+                height: 81.6vw;
+
+                .top-block__image-decor--0 {
+                    left: 4vw;
+                    width: 90.13vw;
+                }
+
+                .top-block__image-decor--1 {
+                    width: 90.67vw;
+                    left: -1.33vw;
+                }
+
+                &-decor {
+                    &--1 {
+                        width: 37.87vw;
+                        height: 37.87vw;
+                        left: 2.67vw;
+                        bottom: -5.33vw;
+                    }
+
+                    &--2 {
+                        width: 42.4vw;
+                        left: -9.33vw;
+                    }
+
+                    &--3 {
+                        width: 65.87vw;
+                        height: 62.67vw;
+                        left: 9.33vw;
+                    }
+
+                    &--4 {
+                        width: 42.13vw;
+                    }
+
+                    &--5 {
+                        width: 34.67vw;
+                    }
+                }
+            }
+
+            &__beige {
+                width: 65.87vw;
+                height: 62.67vw;
+                padding: 1.33vw;
+
+                img {
+                    width: 65.87vw;
+                }
+            }
+
+            .top-block__decor {
+                top: 110.67vw;
+            }
+
+            &--1 {
+                .top-block__decor {
+                    top: 113.33vw;
+                }
+            }
+        }
+    }
+
+    .inset {
+        &__content {
+            gap: 8vw;
+            padding-top: 16vw;
+        }
+
+        &__block {
+            gap: 8vw;
+        }
+
+        &__image {
+            &-decor {
+                &--1 {
+                    width: 38.13vw;
+                    height: 26.13vw;
+                    right: 0;
+                    top: -10.67vw;
+                }
+
+                &--2 {
+                    width: 16.8vw;
+                    height: 17.07vw;
+                    bottom: -5.33vw;
+                    left: 24vw;
+                }
+            }
+        }
+
+        &__text {
+            & > div:not(.inset__text-decor) {
+                font-size: 4.27vw;
+            }
+        }
+
+        &__slider {
+            margin-top: 13.33vw;
+
+            .swiper-wrapper {
+                height: 55.47vw;
+            }
+
+            &-decor {
+                &--1 {
+                    width: 39.2vw;
+                    height: 20.53vw;
+                    top: -18.67vw;
+                    right: -2.67vw;
+                }
+
+                &--2 {
+                    width: 18.67vw;
+                    height: 18.67vw;
+                    top: -12vw;
+                    right: 21.33vw;
+                }
+            }
+        }
+
+        &__slide {
+            height: 55.47vw;
+        }
+    }
+
+}
