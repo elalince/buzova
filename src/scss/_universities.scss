@@ -28,6 +28,12 @@
         max-width: 0;
         overflow: hidden;
 
+        &>div{
+          height: 34px;
+          width: 377px;
+          background-image: url(@img/flourish-2.svg);
+        } 
+
         &.shown {
           max-width: 377px;
         }
@@ -37,6 +43,11 @@
         right: 160px;
         max-width: 0;
         overflow: hidden;
+        &>div{
+          height: 30px;
+          width: 210px;
+          background-image: url(@img/flourish-3.svg);
+        } 
 
         &.shown {
           max-width: 210px;

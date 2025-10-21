@@ -150,6 +150,17 @@ header {
     border-radius: 20px;
     background: #e2f9d6;
 
+    &__nav {
+       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      height: 73px;
+    }
+
     .navbar {
       display: flex;
       align-items: center;
@@ -185,12 +196,30 @@ header {
       width: 196px;
       height: 29px;
     }
+
+    &__copyright {
+      display: none;
+    }
   }
 }
 
 .animated {
   transition: all .4s ease-in-out;
   overflow: hidden;
+
+  &>div {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+ 
+  svg {
+      width: 100%;
+      height: 100%;
+  }
+
+  img {
+     height: 100%;
+  }
 }
 
 .footer {
@@ -270,51 +299,14 @@ header {
 /* navbar example */
 
 .navbar-btn {
-  width: 29px;
-  min-width: 29px;
-  height: 29px;
-  padding: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 5px;
-
-  &__span {
-    display: flex;
-    height: 2.5px;
-    background: $White;
-    transition: all linear .3s;
-
-    &_first {
-      width: 16px;
-    }
-
-    &_second {
-      width: 25px;
-    }
-
-    &_third {
-      width: 18px;
-    }
-  }
+  width: 38px;
+  min-height: 25px;
+  background: url("data:image/svg+xml;utf8,<svg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.82609 25C0.817568 25 0 24.1824 0 23.1739V22.6594C0 21.6509 0.817567 20.8333 1.82609 20.8333H36.1739C37.1824 20.8333 38 21.6509 38 22.6594V23.1739C38 24.1824 37.1824 25 36.1739 25H1.82609ZM1.82609 14.5833C0.817568 14.5833 0 13.7658 0 12.7572V12.2428C0 11.2342 0.817567 10.4167 1.82609 10.4167H36.1739C37.1824 10.4167 38 11.2342 38 12.2428V12.7572C38 13.7658 37.1824 14.5833 36.1739 14.5833H1.82609ZM1.82609 4.16667C0.817568 4.16667 0 3.3491 0 2.34058V1.82609C0 0.817568 0.817567 0 1.82609 0H36.1739C37.1824 0 38 0.817567 38 1.82609V2.34058C38 3.3491 37.1824 4.16667 36.1739 4.16667H1.82609Z' fill='%2345D670'/></svg>") center/contain no-repeat;
 
   &_close {
-    .navbar-btn__span {
-      &_first {
-        width: 25px;
-        transform: rotate(45deg);
-        margin-bottom: -15px;
-      }
-      &_second {
-        width: 0;
-        align-self: center;
-      }
-      &_third {
-        width: 25px;
-        transform: rotate(-45deg);
-      }
-    }
+    width: 35px;
+    min-height: 35px;
+    background: url("data:image/svg+xml;utf8,<svg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M31.0879 1.35352C31.6737 0.767988 32.6233 0.767816 33.209 1.35352L33.6465 1.79102C34.2322 2.37671 34.232 3.3263 33.6465 3.91211L20.4121 17.1465C20.2172 17.3417 20.2172 17.6583 20.4121 17.8535L33.6465 31.0879C34.232 31.6737 34.2322 32.6233 33.6465 33.209L33.209 33.6465C32.6233 34.2322 31.6737 34.232 31.0879 33.6465L17.8535 20.4121C17.6583 20.2172 17.3417 20.2172 17.1465 20.4121L3.91211 33.6465C3.3263 34.232 2.37672 34.2322 1.79102 33.6465L1.35352 33.209C0.767816 32.6233 0.76799 31.6737 1.35352 31.0879L14.5879 17.8535C14.7828 17.6583 14.7828 17.3417 14.5879 17.1465L1.35352 3.91211C0.767989 3.3263 0.767817 2.37671 1.35352 1.79102L1.79102 1.35352C2.37672 0.767816 3.3263 0.767991 3.91211 1.35352L17.1465 14.5879C17.3417 14.7828 17.6583 14.7828 17.8535 14.5879L31.0879 1.35352Z' fill='%2345D670' stroke='%2345D670'/></svg>") center/contain no-repeat;
   }
 
   @media (min-width: 768px) {

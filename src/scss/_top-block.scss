@@ -57,17 +57,29 @@
     width: 0;
     height: 294px;
     overflow: hidden;
-    //background: url("@img/flourish-1.svg") left top no-repeat;
+   
     transition: all 1s ease;
+
+    &>div {
+      background-image: url("@img/flourish-1.svg");
+      background-repeat: no-repeat;
+     height: 294px;
+      width: 517px;
+    }
 
     &.shown {
       width: 517px;
+    }
+
+    &--mobile {
+      display: none;
     }
   }
 
   &__image {
     position: relative;
-    min-width: 764px;
+    min-width: 723px;
+    max-width: 723px;
 
     &-decor {
       position: absolute;
@@ -88,7 +100,7 @@
 
       &--2 {
         top: 240px;
-        left: 70px;
+        left: 35px;
         width: 57px;
         animation: rotation 40s linear infinite;
       }
