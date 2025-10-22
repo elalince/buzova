@@ -86,6 +86,9 @@
             font-size: 12.8vw;
         }
 
+        &__subtitle {
+            font-size: 6.7vw;
+        }
 
         &__text {
             font-size: 4.8vw;
@@ -363,7 +366,7 @@
         }
     }
 
-        .video {
+    .video {
         padding: 13.33vw 0;
 
         .video-block {
@@ -536,7 +539,7 @@
             }
         }
     }
-        .footer {
+    .footer {
         padding: 8vw;
         gap: 6.13vw;
 
@@ -551,6 +554,10 @@
 
     .university-page {
         .top-university {
+
+              .top-block__subtitle {
+                    font-size: 6.7vw;
+                }
             &__image {
                 height: 81.6vw;
 
@@ -604,14 +611,26 @@
             }
 
             .top-block__decor {
-                top: 110.67vw;
+                top: 105.67vw;
+                height: 38.4vw;
+
+                div {
+                     height: 38.4vw;
+                }
+
             }
 
             &--1 {
                 .top-block__decor {
                     top: 113.33vw;
+                    height: 30.93vw;
+
+                    div {
+                    height: 30.93vw;
+                }
                 }
             }
+
         }
     }
 

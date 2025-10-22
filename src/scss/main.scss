@@ -204,7 +204,7 @@ header {
 }
 
 .animated {
-  transition: max-width .4s ease-in-out;
+  transition: max-width .4s ease-in-out, width .4s ease-in-out;
   overflow: hidden;
 
   &>div {

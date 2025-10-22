@@ -187,7 +187,7 @@ header .header__copyright {
 }
 
 .animated {
-  transition: max-width 0.4s ease-in-out;
+  transition: max-width 0.4s ease-in-out, width 0.4s ease-in-out;
   overflow: hidden;
 }
 .animated > div {
@@ -1905,7 +1905,7 @@ header .header__copyright {
   background-image: url(../img/flourish-inset-3.svg);
 }
 .university-page--3 .top-block__decor div {
-  background-image: url(../img/flourish-mobile-2.svg);
+  background-image: url(../img/flourish-mobile-5.svg);
 }
 .university-page--3 .inset__button {
   background: url("data:image/svg+xml;utf8,<svg width='20' height='36' viewBox='0 0 20 36' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M19.2048 16.0003L3.84039 0L0 3.99937L13.4442 18L0 32.0006L3.84039 36L19.2048 19.9997C19.7139 19.4693 20 18.75 20 18C20 17.25 19.7139 16.5307 19.2048 16.0003Z' fill='%2345D670'/></svg>") center/contain no-repeat;
@@ -1957,7 +1957,7 @@ header .header__copyright {
   background-image: url(../img/flourish-inset-5.svg);
 }
 .university-page--5 .top-block__decor div {
-  background-image: url(../img/flourish-mobile-2.svg);
+  background-image: url(../img/flourish-mobile-5.svg);
 }
 .university-page--5 .inset__button {
   background: url("data:image/svg+xml;utf8,<svg width='20' height='36' viewBox='0 0 20 36' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M19.2048 16.0003L3.84039 0L0 3.99937L13.4442 18L0 32.0006L3.84039 36L19.2048 19.9997C19.7139 19.4693 20 18.75 20 18C20 17.25 19.7139 16.5307 19.2048 16.0003Z' fill='%2345D670'/></svg>") center/contain no-repeat;
@@ -2035,7 +2035,7 @@ header .header__copyright {
   background-image: url(../img/flourish-inset-5.svg);
 }
 .university-page--8 .top-block__decor div {
-  background-image: url(../img/flourish-mobile-2.svg);
+  background-image: url(../img/flourish-mobile-5.svg);
 }
 .university-page--8 .inset__button {
   background: url("data:image/svg+xml;utf8,<svg width='20' height='36' viewBox='0 0 20 36' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M19.2048 16.0003L3.84039 0L0 3.99937L13.4442 18L0 32.0006L3.84039 36L19.2048 19.9997C19.7139 19.4693 20 18.75 20 18C20 17.25 19.7139 16.5307 19.2048 16.0003Z' fill='%2345D670'/></svg>") center/contain no-repeat;
@@ -2087,7 +2087,7 @@ header .header__copyright {
   background-image: url(../img/flourish-inset-3.svg);
 }
 .university-page--10 .top-block__decor div {
-  background-image: url(../img/flourish-mobile-2.svg);
+  background-image: url(../img/flourish-mobile-5.svg);
 }
 .university-page--10 .inset__button {
   background: url("data:image/svg+xml;utf8,<svg width='20' height='36' viewBox='0 0 20 36' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M19.2048 16.0003L3.84039 0L0 3.99937L13.4442 18L0 32.0006L3.84039 36L19.2048 19.9997C19.7139 19.4693 20 18.75 20 18C20 17.25 19.7139 16.5307 19.2048 16.0003Z' fill='%2345D670'/></svg>") center/contain no-repeat;
@@ -4425,6 +4425,9 @@ header .header__copyright {
   .top-block__title {
     font-size: 12.8vw;
   }
+  .top-block__subtitle {
+    font-size: 6.7vw;
+  }
   .top-block__text {
     font-size: 4.8vw;
   }
@@ -4768,6 +4771,9 @@ header .header__copyright {
   .footer__logos {
     height: 19.2vw;
   }
+  .university-page .top-university .top-block__subtitle {
+    font-size: 6.7vw;
+  }
   .university-page .top-university__image {
     height: 81.6vw;
   }
@@ -4809,10 +4815,18 @@ header .header__copyright {
     width: 65.87vw;
   }
   .university-page .top-university .top-block__decor {
-    top: 110.67vw;
+    top: 105.67vw;
+    height: 38.4vw;
+  }
+  .university-page .top-university .top-block__decor div {
+    height: 38.4vw;
   }
   .university-page .top-university--1 .top-block__decor {
     top: 113.33vw;
+    height: 30.93vw;
+  }
+  .university-page .top-university--1 .top-block__decor div {
+    height: 30.93vw;
   }
   .inset__content {
     gap: 8vw;
