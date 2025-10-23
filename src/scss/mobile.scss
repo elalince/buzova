@@ -23,6 +23,12 @@
             flex-direction: column;
             transition: all .3s ease-in-out;
 
+            &--inset {
+                .logo {
+                    display: none;
+                }
+            }
+
 
             &__nav {
                 flex-direction: column;
@@ -645,6 +651,7 @@
     }
 
     .test-block {
+        margin-top: 0;
         &__container {
             width: 100%;
             padding-top: 103px;
@@ -863,7 +870,10 @@
         right: auto;
     }
     .university-page {
-
+        .logo {
+             display: none;
+            }
+            
         .top-university {
             &__image {
                 width: 100%;

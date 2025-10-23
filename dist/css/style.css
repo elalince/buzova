@@ -1573,6 +1573,7 @@ header .header__copyright {
 
 .test-block {
   position: relative;
+  margin-top: 4px;
 }
 .test-block__container {
   display: flex;
@@ -3696,6 +3697,9 @@ header .header__copyright {
     flex-direction: column;
     transition: all 0.3s ease-in-out;
   }
+  header .header--inset .logo {
+    display: none;
+  }
   header .header__nav {
     flex-direction: column;
     justify-content: center;
@@ -4187,6 +4191,9 @@ header .header__copyright {
   .video .video-block__navigation {
     bottom: 8px;
   }
+  .test-block {
+    margin-top: 0;
+  }
   .test-block__container {
     width: 100%;
     padding-top: 103px;
@@ -4361,6 +4368,9 @@ header .header__copyright {
     order: 3;
     bottom: auto;
     right: auto;
+  }
+  .university-page .logo {
+    display: none;
   }
   .university-page .top-university__image {
     width: 100%;
