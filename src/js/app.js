@@ -9,4 +9,4 @@ flsFunctions.insetSlider();
 flsFunctions.test();
 flsFunctions.footer();
 flsFunctions.bodyClacc();
-
+flsFunctions.toTop();

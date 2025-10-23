@@ -394,3 +394,9 @@ export function bodyClacc() {
         }
     });
 }
+
+ export function toTop() {    
+     document.getElementById("toTopBtn").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
