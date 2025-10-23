@@ -98,6 +98,13 @@
         height: 5.07vw;
     }
 
+    .to-top {
+        width: 1.39vw;
+        height: 2.50vw;
+        right: 2.78vw;
+        bottom: 2.78vw;
+    }
+
     .navbar-btn {
     width: 2.0139vw;
     min-width: 2.0139vw;
@@ -717,6 +724,31 @@
     width: 40.4861vw;
     }
 
+    .facts .fact__image--2 {
+    width: 30.62vw;
+}
+
+    .facts .fact__image--3 {
+        width: 37.50vw;
+    }
+
+    .facts .fact__image--4 {
+        width: 37.50vw;
+    }
+
+    .facts .fact__image--5 {
+        width: 32.56vw;
+    }
+
+    .facts .fact__image--6 {
+        width: 34.02vw;
+    }
+
+    .facts .fact__image--7 {
+        width: 36.11vw;
+    }
+
+
     @keyframes helicopter {
         0% {
             transform: translate(0.6944vw, -0.6944vw);
@@ -792,14 +824,19 @@
     }
 
     .video .video-block__container {
-        width: 54.0278vw;
-        height: 28.8889vw;
+        width: 54.03vw;
+        height: 30.56vw;
         border-radius: 1.3889vw;
     }
 
+    .video .video-block__plug {
+        font-size: 2.2vw;
+    }
+
+
     .video .video-block__slide-wrapper {
-    width: 57.5vw;
-    height: 31.6667vw;
+    width: 56.44vw;
+    height: 33.52vw;
     padding: 1.3889vw;
     border-radius: 0 1.3889vw 1.3889vw 1.3889vw;
     }
@@ -1009,11 +1046,13 @@
     }
 
     .test .result__text {
-    width: 28.0556vw;
+        width: 28.0556vw;
+        font-size: 1.25vw;
     }
 
     .test .result__decor--1 {
     right: 3.4722vw;
+    width: 18.96vw;
     }
 
     .test .result .refresh {

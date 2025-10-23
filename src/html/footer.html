@@ -20,8 +20,15 @@
             <img src="@img/logo-girl.webp">
             <img src="@img/logo.webp">
         </div>
+        <a id="toTopBtn" class="to-top" aria-label="Наверх"></a>
     </div>
+   
 
+        <script>
+        document.getElementById("toTopBtn").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        </script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/app.min.js"></script>
 
