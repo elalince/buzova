@@ -476,6 +476,10 @@
     }
 
     .test {
+        z-index: 98;
+        .questions {
+            height: 190.6667vw;
+        }
         .question {
             padding: 4.27vw;
             top: 16vw;
@@ -512,9 +516,18 @@
         }
 
         .results {
+
+              &.active {
+                position: relative;
+              }
             .result {
                 padding: 16vw 4.27vw;
                 gap: 4.27vw;
+
+                 &.active {
+                position: relative;
+              }
+
 
                 &__content {
                     gap: 4.27vw;

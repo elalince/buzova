@@ -204,118 +204,116 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 export function test() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const startBtn = document.querySelector('.start');
-        const test = document.querySelector('.test');
-        const questionsBlock = document.querySelector('.questions');
-        const questions = document.querySelectorAll('.question');
-        const resultsBlock = document.querySelector('.results');
-        const results = document.querySelectorAll('.result');
-        let answers = [];
 
-        // --- старт ---
-        startBtn?.addEventListener('click', () => {
-            test.style.display = 'flex';
-            questionsBlock.style.display = 'block';
-            showQuestion(0);
-        });
+document.addEventListener('DOMContentLoaded', () => {
+  const test = document.querySelector('.test');
+  const questionsBlock = document.querySelector('.questions');
+  const questions = document.querySelectorAll('.question');
+  const resultsBlock = document.querySelector('.results');
+  const results = document.querySelectorAll('.result');
+  let answers = [];
 
-        // --- обработка вопросов ---
-        questions.forEach((question, index) => {
-            const answerItems = question.querySelectorAll('.answers__item');
-            const nextBtn = question.querySelector('.question__btn');
+  // --- показать первый вопрос при загрузке ---
+  if (questions.length > 0) {
+    test.style.display = 'flex';
+    questionsBlock.style.display = 'block';
+    showQuestion(0);
+  }
 
-            answerItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    answerItems.forEach(i => i.classList.remove('selected'));
-                    item.classList.add('selected');
+  // --- обработка кликов по ответам ---
+  questions.forEach((question, index) => {
+    const answerItems = question.querySelectorAll('.answers__item');
+    const nextBtn = question.querySelector('.question__btn');
 
-                    nextBtn.style.opacity = '1';
-                    nextBtn.style.visibility = 'visible';
-                });
-            });
+    answerItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // снимаем выделение с других
+        answerItems.forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
 
-            nextBtn.addEventListener('click', () => {
-                const selected = question.querySelector('.answers__item.selected');
-                if (!selected) return;
-
-                // 🔧 читаем правильный атрибут
-                const chosen = selected.dataset.answer?.toLowerCase();
-                answers[index] = chosen;
-                console.log(`Ответ ${index + 1}:`, chosen);
-
-                hideQuestion(index);
-
-                if (index < questions.length - 1) {
-                    showQuestion(index + 1);
-                } else {
-                    showResults();
-                }
-            });
-        });
-
-        function showQuestion(i) {
-            questions[i].classList.add('active');
-        }
-
-        function hideQuestion(i) {
-            questions[i].classList.remove('active');
-        }
-
-        // --- результаты ---
-        function showResults() {
-            console.log('Все ответы:', answers);
-            questionsBlock.style.display = 'none';
-            resultsBlock.classList.add('active');
-
-            const counts = {a: 0, b: 0, c: 0, d: 0};
-            answers.forEach(a => {
-                if (a && counts[a] !== undefined) counts[a]++;
-            });
-
-            console.log('Подсчёт:', counts);
-
-            // выбираем максимальный
-            const maxType = Object.keys(counts).reduce((a, b) =>
-                counts[a] >= counts[b] ? a : b
-            );
-
-            console.log('Результат:', maxType);
-
-            results.forEach(r => {
-                if (r.dataset.result?.toLowerCase() === maxType) {
-                    r.classList.add('active');
-                } else {
-                    r.classList.remove('active');
-                }
-            });
-        }
-
-        // --- сброс ---
-        results.forEach(result => {
-            const refreshBtn = result.querySelector('.refresh');
-            refreshBtn?.addEventListener('click', () => {
-                resultsBlock.classList.remove('active');
-                results.forEach(r => r.classList.remove('active'));
-
-                setTimeout(() => {
-                    resultsBlock.classList.remove('active');
-                    questionsBlock.style.display = 'block';
-
-                    questions.forEach(q => {
-                        q.classList.remove('active');
-                        q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
-                        const btn = q.querySelector('.question__btn');
-                        btn.style.opacity = '0';
-                        btn.style.visibility = 'hidden';
-                    });
-
-                    answers = [];
-                    showQuestion(0);
-                }, 300);
-            });
-        });
+        // делаем кнопку "далее" видимой
+        nextBtn.style.opacity = '1';
+        nextBtn.style.visibility = 'visible';
+      });
     });
+
+    // --- кнопка "далее" ---
+    nextBtn.addEventListener('click', () => {
+      const selected = question.querySelector('.answers__item.selected');
+      if (!selected) return;
+
+      const chosen = selected.dataset.answer?.toLowerCase();
+      answers[index] = chosen;
+
+      hideQuestion(index);
+
+      if (index < questions.length - 1) {
+        showQuestion(index + 1);
+      } else {
+        showResults();
+      }
+    });
+  });
+
+  // --- показать / скрыть вопросы ---
+  function showQuestion(i) {
+    questions[i].classList.add('active');
+  }
+
+  function hideQuestion(i) {
+    questions[i].classList.remove('active');
+  }
+
+  // --- показать результаты ---
+  function showResults() {
+    questionsBlock.style.display = 'none';
+    resultsBlock.classList.add('active');
+
+    const counts = { a: 0, b: 0, c: 0, d: 0 };
+    answers.forEach(a => {
+      if (a && counts[a] !== undefined) counts[a]++;
+    });
+
+    // определяем результат с максимальным количеством ответов
+    const maxType = Object.keys(counts).reduce((a, b) =>
+      counts[a] >= counts[b] ? a : b
+    );
+
+    results.forEach(r => {
+      if (r.dataset.result?.toLowerCase() === maxType) {
+        r.classList.add('active');
+      } else {
+        r.classList.remove('active');
+      }
+    });
+  }
+
+  // --- сброс теста ---
+  results.forEach(result => {
+    const refreshBtn = result.querySelector('.refresh');
+    refreshBtn?.addEventListener('click', () => {
+      resultsBlock.classList.remove('active');
+      results.forEach(r => r.classList.remove('active'));
+
+      setTimeout(() => {
+        resultsBlock.classList.remove('active');
+        questionsBlock.style.display = 'block';
+
+        questions.forEach(q => {
+          q.classList.remove('active');
+          q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
+          const btn = q.querySelector('.question__btn');
+          btn.style.opacity = '0';
+          btn.style.visibility = 'hidden';
+        });
+
+        answers = [];
+        showQuestion(0);
+      }, 300);
+    });
+  });
+});
+
 }
 
 

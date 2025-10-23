@@ -1,6 +1,6 @@
 .test-block {
     position: relative;
-     margin-top: 4px;
+
 
     &__container {
         display: flex;
@@ -155,11 +155,12 @@
     width: 1252px;
     height: 640px;
     background: #e2f9d6;
-    position: absolute;
+    position: relative;
     top: 0;
     overflow: hidden;
     display: none;
     z-index: 99;
+    margin-top: 4px;
 
     .questions {
         position: relative;

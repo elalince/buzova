@@ -284,6 +284,9 @@ header .header__copyright {
   gap: 31px;
   height: 80px;
 }
+.footer__logos a {
+  height: 100%;
+}
 
 /* navbar example */
 .navbar-btn {
@@ -1573,7 +1576,6 @@ header .header__copyright {
 
 .test-block {
   position: relative;
-  margin-top: 4px;
 }
 .test-block__container {
   display: flex;
@@ -1711,11 +1713,12 @@ header .header__copyright {
   width: 1252px;
   height: 640px;
   background: #e2f9d6;
-  position: absolute;
+  position: relative;
   top: 0;
   overflow: hidden;
   display: none;
   z-index: 99;
+  margin-top: 4px;
 }
 .test .questions {
   position: relative;
@@ -3378,7 +3381,7 @@ header .header__copyright {
     font-size: 2.9167vw;
   }
   .test .result__text {
-    width: 28.0556vw;
+    width: 31.0556vw;
     font-size: 1.25vw;
   }
   .test .result__decor--1 {
@@ -3686,7 +3689,7 @@ header .header__copyright {
     position: absolute;
     left: 8px;
     right: 8px;
-    z-index: 10;
+    z-index: 99;
   }
   header .header {
     width: 100%;
@@ -4249,7 +4252,7 @@ header .header__copyright {
   }
   .test .questions {
     width: 100%;
-    height: 100%;
+    height: 715px;
   }
   .test .question {
     width: 100%;
@@ -4295,7 +4298,7 @@ header .header__copyright {
   }
   .test .results {
     width: 100%;
-    height: 100%;
+    height: 715px;
   }
   .test .results .result {
     width: 100%;
@@ -4810,6 +4813,12 @@ header .header__copyright {
   .test-block__text {
     max-width: 80vw;
   }
+  .test {
+    z-index: 98;
+  }
+  .test .questions {
+    height: 190.6667vw;
+  }
   .test .question {
     padding: 4.27vw;
     top: 16vw;
@@ -4837,9 +4846,15 @@ header .header__copyright {
     right: -6.67vw;
     top: -6.67vw;
   }
+  .test .results.active {
+    position: relative;
+  }
   .test .results .result {
     padding: 16vw 4.27vw;
     gap: 4.27vw;
+  }
+  .test .results .result.active {
+    position: relative;
   }
   .test .results .result__content {
     gap: 4.27vw;
