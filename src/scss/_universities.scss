@@ -78,7 +78,7 @@
 
       .university__preview {
         width: 130px;
-        padding: 43px 30px 43px 40px;
+        padding: 38px 30px 38px 40px;
       }
     }
 
@@ -87,6 +87,10 @@
       transform: rotate(25deg);
       margin-right: 125px;
       pointer-events: none;
+
+      .university__preview {
+        padding-top: 0;
+      }
 
     }
 
@@ -146,7 +150,7 @@
       justify-content: flex-start;
       order: 1;
       width: 100px;
-      height: 640px;
+      height: 100%;
       padding: 43px 20px;
       position: relative;
       transition: all .5s ease;
@@ -342,13 +346,13 @@
       font-size: 18px;
       text-transform: uppercase;
       color: #3e3e3e;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     &__text {
       font-size: 16px;
       color: #3e3e3e;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     .btn {

@@ -2,16 +2,19 @@
 export function showNav() {
 
     const navbarBtn = document.querySelector( '.navbar-btn');
+    const header = document.querySelector( 'header');
     const navbarHeader = document.querySelector( '.header');
     const navbarLink = document.querySelectorAll( '.navbar__item');
 
     $(navbarBtn).on('click', function() {
         $(navbarBtn).toggleClass('navbar-btn_close')
         $(navbarHeader).toggleClass('open')
+        $(header).toggleClass('open')
     });
     $(navbarLink).on('click', function() {
         $(navbarBtn).removeClass('navbar-btn_close')
         $(navbarHeader).removeClass('open')
+        $(header).removeClass('open')
     });
 }
 export function scrollTo () {
@@ -92,32 +95,51 @@ export function insetSlider() {
 }
 
 export function universities() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const universities = document.querySelectorAll('.university');
-        const startEl = document.querySelector('.university--start');
+  document.addEventListener('DOMContentLoaded', () => {
+  const universities = document.querySelectorAll('.university');
+  const startEl = document.querySelector('.university--start');
+  const timeouts = new WeakMap(); // храним таймеры для каждого элемента
 
-        universities.forEach(university => {
-            university.addEventListener('click', () => {
-                universities.forEach(u => {
-                    u.classList.remove('open');
-                    const inset = u.querySelector('.university__inset');
-                    if (inset) inset.style.overflow = 'hidden';
-                });
+  universities.forEach(university => {
+    university.addEventListener('click', () => {
+      universities.forEach(u => {
+        u.classList.remove('open');
+        const inset = u.querySelector('.university__inset');
+        if (inset) {
+          inset.style.overflow = 'hidden';
+          // очищаем старый таймер
+          if (timeouts.has(u)) {
+            clearTimeout(timeouts.get(u));
+            timeouts.delete(u);
+          }
+        }
+      });
 
-                university.classList.add('open');
-                const activeInset = university.querySelector('.university__inset');
+      university.classList.add('open');
+      const activeInset = university.querySelector('.university__inset');
 
-                if (activeInset) {
-                    // Сначала скрыто, потом через 0.5с делаем overflow: visible
-                    setTimeout(() => {
-                        activeInset.style.overflow = 'visible';
-                    }, 500);
-                }
+      if (activeInset) {
+        // Сбрасываем предыдущий таймер (если был)
+        if (timeouts.has(university)) {
+          clearTimeout(timeouts.get(university));
+        }
 
-                if (startEl) startEl.style.display = 'none';
-            });
-        });
+        const timer = setTimeout(() => {
+          // Проверяем, что элемент всё ещё активен
+          if (university.classList.contains('open')) {
+            activeInset.style.overflow = 'visible';
+          }
+        }, 500);
+
+        // сохраняем таймер
+        timeouts.set(university, timer);
+      }
+
+      if (startEl) startEl.style.display = 'none';
     });
+  });
+});
+
     document.querySelectorAll('.university').forEach((el, i, all) => {
         const prev = all[i - 1];
 
@@ -150,12 +172,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const factItems = document.querySelectorAll('.facts__item');
   const popup = document.querySelector('.facts__popup');
   const facts = document.querySelectorAll('.fact');
+  const body = document.querySelector('body');
 
   // --- открыть popup ---
   factItems.forEach(item => {
     item.addEventListener('click', () => {
       const factId = parseInt(item.dataset.fact);
       popup.classList.add('active');
+      body.classList.add('no-scroll');
 
       facts.forEach(f => f.classList.remove('active', 'fade-out'));
       const activeFact = popup.querySelector(`.fact[data-popup="${factId}"]`);
@@ -170,7 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.classList.contains('facts__popup')
     ) {
       popup.classList.remove('active');
+      body.classList.remove('no-scroll');
       facts.forEach(f => f.classList.remove('active', 'fade-out'));
+      
     }
   });
 
@@ -213,6 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const results = document.querySelectorAll('.result');
   let answers = [];
 
+  const isMobile = window.innerWidth < 544; // 💡 проверяем ширину экрана
+
   // --- показать первый вопрос при загрузке ---
   if (questions.length > 0) {
     test.style.display = 'flex';
@@ -225,35 +253,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const answerItems = question.querySelectorAll('.answers__item');
     const nextBtn = question.querySelector('.question__btn');
 
+    // если мобильное устройство — скрываем кнопку
+    if (isMobile && nextBtn) {
+      nextBtn.style.display = 'none';
+    }
+
     answerItems.forEach(item => {
       item.addEventListener('click', () => {
         // снимаем выделение с других
         answerItems.forEach(i => i.classList.remove('selected'));
         item.classList.add('selected');
 
-        // делаем кнопку "далее" видимой
-        nextBtn.style.opacity = '1';
-        nextBtn.style.visibility = 'visible';
+        const chosen = item.dataset.answer?.toLowerCase();
+        answers[index] = chosen;
+
+        // если мобильное — сразу переключаем вопрос
+        if (isMobile) {
+          goNext(index);
+        } else {
+          // иначе показываем кнопку "далее"
+          nextBtn.style.opacity = '1';
+          nextBtn.style.visibility = 'visible';
+        }
       });
     });
 
     // --- кнопка "далее" ---
-    nextBtn.addEventListener('click', () => {
+    nextBtn?.addEventListener('click', () => {
       const selected = question.querySelector('.answers__item.selected');
       if (!selected) return;
 
       const chosen = selected.dataset.answer?.toLowerCase();
       answers[index] = chosen;
-
-      hideQuestion(index);
-
-      if (index < questions.length - 1) {
-        showQuestion(index + 1);
-      } else {
-        showResults();
-      }
+      goNext(index);
     });
   });
+
+  // --- переход к следующему вопросу или к результатам ---
+  function goNext(index) {
+    hideQuestion(index);
+    if (index < questions.length - 1) {
+      showQuestion(index + 1);
+    } else {
+      showResults();
+    }
+  }
 
   // --- показать / скрыть вопросы ---
   function showQuestion(i) {
@@ -274,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (a && counts[a] !== undefined) counts[a]++;
     });
 
-    // определяем результат с максимальным количеством ответов
     const maxType = Object.keys(counts).reduce((a, b) =>
       counts[a] >= counts[b] ? a : b
     );
@@ -303,8 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
           q.classList.remove('active');
           q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
           const btn = q.querySelector('.question__btn');
-          btn.style.opacity = '0';
-          btn.style.visibility = 'hidden';
+          if (btn) {
+            btn.style.opacity = '0';
+            btn.style.visibility = 'hidden';
+            if (isMobile) btn.style.display = 'none';
+          }
         });
 
         answers = [];
@@ -312,7 +358,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300);
     });
   });
+
+  // --- динамическая высота test ---
+  // function adjustTestHeight() {
+  //   const activeElement =
+  //     document.querySelector('.question.active') ||
+  //     document.querySelector('.result.active');
+  //   if (activeElement && test) {
+  //     const height = activeElement.offsetHeight;
+  //     test.style.height = `${height}px`;
+  //   }
+  // }
+
+  // window.addEventListener('resize', adjustTestHeight);
 });
+
 
 }
 

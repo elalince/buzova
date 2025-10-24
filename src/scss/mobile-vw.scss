@@ -1,9 +1,5 @@
 @media (max-width: 544px) {
-    body {
-        padding: 2.13vw;
-    }
 
- 
 
     // header {
     //     left: 2.13vw;
@@ -354,8 +350,8 @@
 
             &__text {
                 font-size: 4.27vw !important;
-                max-height: 50.67vw;
-                min-height: 50.67vw;
+                max-height: calc(100vh - 13vw - 67px - 8.27vw - 58.67vw - 17vw - 2.67vw - 2.67vw - 2.67vw);
+                min-height: 100px;
                 margin-left: -4vw;
                 padding-left: 4vw;
 

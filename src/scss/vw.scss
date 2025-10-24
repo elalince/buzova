@@ -20,6 +20,7 @@
     padding: 1.1111vw 4.1667vw;
     height: 3.2639vw;
     font-size: 1.3889vw;
+    line-height: 3.2639vw;
     }
 
     .btn--2 {
@@ -96,6 +97,10 @@
     .footer__logos {
         gap: 2.1528vw;
         height: 5.07vw;
+
+        a:first-child {
+            height: 4vw;
+        }
     }
 
     .to-top {
@@ -277,8 +282,7 @@
     }
 
     .universities .university__preview {
-    width: 6.9444vw;
-    height: 44.4444vw;
+    width: 6.9445vw;
     padding: 2.9861vw 1.3889vw;
     }
 
@@ -295,48 +299,48 @@
     }
 
     .universities .university__content {
-    padding: 2.9861vw 1.3889vw 2.9861vw 5vw;
+    padding: 2.6vw 1.4vw 2.6vw 5vw;
     width: 27.0833vw;
     }
 
     .universities .university__content--1 {
-    gap: 1.9444vw;
+    gap: 1.6vw;
     }
 
     .universities .university__content--2 {
-    gap: 1.3889vw;
+    gap: 1.2vw;
     }
 
     .universities .university__content--3 {
-    gap: 1.25vw;
+    gap: 1.2vw;
     }
 
     .universities .university__content--4 {
-    gap: 1.9444vw;
+    gap: 1.6vw;
     }
 
     .universities .university__content--5 {
-    gap: 1.3889vw;
+    gap: 1.2vw;
     }
 
     .universities .university__content--6 {
-    gap: 1.9444vw;
+    gap: 1.6vw;
     }
 
     .universities .university__content--7 {
-    gap: 1.3889vw;
+    gap: 1.2vw;
     }
 
     .universities .university__content--8 {
-    gap: 1.3889vw;
+    gap: 1.2vw;
     }
 
     .universities .university__content--9 {
-    gap: 1.3889vw;
+    gap: 1.2vw;
     }
 
     .universities .university__content--10 {
-    gap: 1.3889vw;
+    gap: 1.2vw;
     }
 
     .universities .university__image {
@@ -660,6 +664,10 @@
     right: 4.8611vw;
     }
 
+    .facts .facts__popup {
+        height: 50.4861vw;
+    }
+
     .facts .fact {
     border-radius: 1.3889vw;
     padding: 1.7361vw 1.7361vw 2.7778vw 1.7361vw;
@@ -670,11 +678,11 @@
     }
 
     .facts .fact--4 .fact__text {
-    font-size: 1.9444vw;
+    font-size: 1.7444vw;
     }
 
     .facts .fact--6 .fact__text {
-    font-size: 1.9444vw;
+    font-size: 1.7444vw;
     }
 
     .facts .fact--7 .fact__text {
@@ -695,9 +703,9 @@
     height: 30.2083vw;
     max-height: 31.25vw;
     padding-left: 4.8611vw;
-    margin-top: 4.1667vw;
+    margin-top: auto;
     margin-left: 4.1667vw;
-    margin-bottom: 4.1667vw;
+    margin-bottom: auto;
     }
 
     .facts .fact__content::-webkit-scrollbar {

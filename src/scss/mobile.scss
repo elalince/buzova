@@ -14,6 +14,13 @@
          right: 8px;
          z-index: 99;
 
+         &.open {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+         }
+
         .header {
             width: 100%;
             height: 45px;
@@ -21,7 +28,7 @@
             padding: 11px 8px;
             background: transparent !important;
             flex-direction: column;
-            transition: all .3s ease-in-out;
+            transition: height .3s ease-in-out;
 
             &--inset {
                 .logo {
@@ -38,10 +45,14 @@
             }
 
             &.open {
-                height: calc(100vh - 16px);
+                height: 100vh;
                 background: #e2f9d6 !important;
-                padding: 11px 8px 0 8px;
+                padding: 19px 16px 8px 16px;
                 border-radius: 20px;
+                 .navbar-btn  {
+                    top: 19px;
+                    left: 24px;
+                 }
             }
 
             .navbar-btn {
@@ -211,6 +222,7 @@
 
             &__name {
                 writing-mode: horizontal-tb;
+                display: inline;
                 transform: none;
                 font-size: 16px;
                 text-align: right;
@@ -474,11 +486,14 @@
             left: 8px;
             right: 8px;
             bottom: 8px;
+            transform: none;
+            height: auto;
         }
 
          .fact {
             padding: 25px;
             height: 100%;
+            justify-content: flex-start;
 
             &__number {
                 font-size: 32px;
@@ -507,6 +522,8 @@
                 margin-bottom: 0;
                 overflow: visible;
                 align-items: center;
+                height: auto;
+                max-height: 100%;
                 gap: 10px;
             }
 
@@ -518,11 +535,11 @@
             &__text {
                 order: 2;
                 font-size: 16px !important;
-                max-height: 190px;
-                min-height: 190px;
+                max-height: calc(100vh - 13vw - 67px - 8.27vw - 58.67vw - 17vw - 2.67vw - 2.67vw - 2.67vw);
+                min-height: calc(100vh - 13vw - 67px - 8.27vw - 58.67vw - 17vw - 2.67vw - 2.67vw - 2.67vw);
                 overflow-y: auto;
                 direction: rtl;
-                 margin-left: -15px;
+                 margin-left: -15px; 
                  padding-left: 15px;
 
                 > * {
@@ -545,7 +562,7 @@
             }
 
             &__link {
-                margin-top: auto;
+                margin-top: 20px;
                 margin-bottom: 0;
             }
 
