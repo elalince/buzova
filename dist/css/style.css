@@ -3716,6 +3716,16 @@ header .header__copyright {
   body {
     padding: 8px;
   }
+  body.no-scroll:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e2f9d6;
+    z-index: 1;
+  }
   .main-width {
     padding: 0;
     width: auto;
@@ -3725,12 +3735,6 @@ header .header__copyright {
     left: 8px;
     right: 8px;
     z-index: 99;
-  }
-  header.open {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
   }
   header .header {
     width: 100%;
@@ -3753,12 +3757,8 @@ header .header__copyright {
   header .header.open {
     height: 100vh;
     background: #e2f9d6 !important;
-    padding: 19px 16px 8px 16px;
-    border-radius: 20px;
-  }
-  header .header.open .navbar-btn {
-    top: 19px;
-    left: 24px;
+    padding: 11px 8px 0 8px;
+    border-radius: 0;
   }
   header .header .navbar-btn {
     position: absolute;

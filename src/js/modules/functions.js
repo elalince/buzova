@@ -2,19 +2,19 @@
 export function showNav() {
 
     const navbarBtn = document.querySelector( '.navbar-btn');
-    const header = document.querySelector( 'header');
+    const body = document.querySelector( 'body');
     const navbarHeader = document.querySelector( '.header');
     const navbarLink = document.querySelectorAll( '.navbar__item');
 
     $(navbarBtn).on('click', function() {
         $(navbarBtn).toggleClass('navbar-btn_close')
         $(navbarHeader).toggleClass('open')
-        $(header).toggleClass('open')
+        $(body).toggleClass('no-scroll')
     });
     $(navbarLink).on('click', function() {
         $(navbarBtn).removeClass('navbar-btn_close')
         $(navbarHeader).removeClass('open')
-        $(header).removeClass('open')
+        $(body).removeClass('no-scroll')
     });
 }
 export function scrollTo () {
