@@ -3745,6 +3745,7 @@ header .header__copyright {
     justify-content: center;
     gap: 22px;
     min-height: calc(100vh - 45px);
+    transition: all 0.3s ease;
   }
   header .header.open {
     height: 100vh;
@@ -4106,6 +4107,7 @@ header .header__copyright {
     padding: 25px;
     height: 100%;
     justify-content: flex-start;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
   }
   .facts .fact__number {
     font-size: 32px;
@@ -4395,7 +4397,7 @@ header .header__copyright {
     order: 1;
   }
   .footer__team-block {
-    bottom: 0;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -4414,6 +4416,10 @@ header .header__copyright {
     order: 3;
     bottom: auto;
     right: auto;
+    transition: margin-top 0.3s ease;
+  }
+  .to-top.margin {
+    margin-top: 70px;
   }
   .university-page .logo {
     display: none;
@@ -4743,6 +4749,7 @@ header .header__copyright {
   }
   .facts .fact {
     padding: 6.67vw;
+    padding-bottom: calc(6.67vw + env(safe-area-inset-bottom));
   }
   .facts .fact__number {
     font-size: 8.53vw;

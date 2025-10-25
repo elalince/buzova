@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       popup.classList.remove('active');
       body.classList.remove('no-scroll');
       facts.forEach(f => f.classList.remove('active', 'fade-out'));
-      
+
     }
   });
 
@@ -231,148 +231,135 @@ document.addEventListener('DOMContentLoaded', () => {
 
 export function test() {
 
-document.addEventListener('DOMContentLoaded', () => {
-  const test = document.querySelector('.test');
-  const questionsBlock = document.querySelector('.questions');
-  const questions = document.querySelectorAll('.question');
-  const resultsBlock = document.querySelector('.results');
-  const results = document.querySelectorAll('.result');
-  let answers = [];
+    document.addEventListener('DOMContentLoaded', () => {
+        const test = document.querySelector('.test');
+        const questionsBlock = document.querySelector('.questions');
+        const questions = document.querySelectorAll('.question');
+        const resultsBlock = document.querySelector('.results');
+        const results = document.querySelectorAll('.result');
+        let answers = [];
 
-  const isMobile = window.innerWidth < 544; // 💡 проверяем ширину экрана
-
-  // --- показать первый вопрос при загрузке ---
-  if (questions.length > 0) {
-    test.style.display = 'flex';
-    questionsBlock.style.display = 'block';
-    showQuestion(0);
-  }
-
-  // --- обработка кликов по ответам ---
-  questions.forEach((question, index) => {
-    const answerItems = question.querySelectorAll('.answers__item');
-    const nextBtn = question.querySelector('.question__btn');
-
-    // если мобильное устройство — скрываем кнопку
-    if (isMobile && nextBtn) {
-      nextBtn.style.display = 'none';
-    }
-
-    answerItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // снимаем выделение с других
-        answerItems.forEach(i => i.classList.remove('selected'));
-        item.classList.add('selected');
-
-        const chosen = item.dataset.answer?.toLowerCase();
-        answers[index] = chosen;
-
-        // если мобильное — сразу переключаем вопрос
-        if (isMobile) {
-          goNext(index);
-        } else {
-          // иначе показываем кнопку "далее"
-          nextBtn.style.opacity = '1';
-          nextBtn.style.visibility = 'visible';
+        // --- показать первый вопрос при загрузке ---
+        if (questions.length > 0) {
+            test.style.display = 'flex';
+            questionsBlock.style.display = 'block';
+            showQuestion(0);
         }
-      });
-    });
 
-    // --- кнопка "далее" ---
-    nextBtn?.addEventListener('click', () => {
-      const selected = question.querySelector('.answers__item.selected');
-      if (!selected) return;
+        // --- клики по вариантам ответов ---
+        questions.forEach((question, index) => {
+            const answerItems = question.querySelectorAll('.answers__item');
 
-      const chosen = selected.dataset.answer?.toLowerCase();
-      answers[index] = chosen;
-      goNext(index);
-    });
-  });
+            answerItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // снимаем выделение
+                    answerItems.forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
 
-  // --- переход к следующему вопросу или к результатам ---
-  function goNext(index) {
-    hideQuestion(index);
-    if (index < questions.length - 1) {
-      showQuestion(index + 1);
-    } else {
-      showResults();
-    }
-  }
+                    // сохраняем выбранный ответ
+                    const chosen = item.dataset.answer?.toLowerCase();
+                    answers[index] = chosen;
 
-  // --- показать / скрыть вопросы ---
-  function showQuestion(i) {
-    questions[i].classList.add('active');
-  }
-
-  function hideQuestion(i) {
-    questions[i].classList.remove('active');
-  }
-
-  // --- показать результаты ---
-  function showResults() {
-    questionsBlock.style.display = 'none';
-    resultsBlock.classList.add('active');
-
-    const counts = { a: 0, b: 0, c: 0, d: 0 };
-    answers.forEach(a => {
-      if (a && counts[a] !== undefined) counts[a]++;
-    });
-
-    const maxType = Object.keys(counts).reduce((a, b) =>
-      counts[a] >= counts[b] ? a : b
-    );
-
-    results.forEach(r => {
-      if (r.dataset.result?.toLowerCase() === maxType) {
-        r.classList.add('active');
-      } else {
-        r.classList.remove('active');
-      }
-    });
-  }
-
-  // --- сброс теста ---
-  results.forEach(result => {
-    const refreshBtn = result.querySelector('.refresh');
-    refreshBtn?.addEventListener('click', () => {
-      resultsBlock.classList.remove('active');
-      results.forEach(r => r.classList.remove('active'));
-
-      setTimeout(() => {
-        resultsBlock.classList.remove('active');
-        questionsBlock.style.display = 'block';
-
-        questions.forEach(q => {
-          q.classList.remove('active');
-          q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
-          const btn = q.querySelector('.question__btn');
-          if (btn) {
-            btn.style.opacity = '0';
-            btn.style.visibility = 'hidden';
-            if (isMobile) btn.style.display = 'none';
-          }
+                    // лёгкая задержка для UX, чтобы пользователь видел выбор
+                    setTimeout(() => {
+                        goNext(index);
+                    }, 300);
+                });
+            });
         });
 
-        answers = [];
-        showQuestion(0);
-      }, 300);
+        // --- переход к следующему вопросу или к результатам ---
+        function goNext(index) {
+            hideQuestion(index);
+            if (index < questions.length - 1) {
+                showQuestion(index + 1);
+            } else {
+                showResults();
+            }
+        }
+
+        // --- показать вопрос ---
+        function showQuestion(i) {
+            questions.forEach(q => q.classList.remove('active'));
+            const current = questions[i];
+            if (!current) return;
+
+            current.classList.add('active');
+
+        }
+
+        // --- скрыть вопрос ---
+        function hideQuestion(i) {
+            const current = questions[i];
+            if (current) current.classList.remove('active');
+        }
+
+        // --- показать результаты ---
+        function showResults() {
+            questionsBlock.style.display = 'none';
+            resultsBlock.classList.add('active');
+
+            const counts = { a: 0, b: 0, c: 0, d: 0 };
+            answers.forEach(a => {
+                if (a && counts[a] !== undefined) counts[a]++;
+            });
+
+            const maxType = Object.keys(counts).reduce((a, b) =>
+                counts[a] >= counts[b] ? a : b
+            );
+
+            results.forEach(r => {
+                if (r.dataset.result?.toLowerCase() === maxType) {
+                    r.classList.add('active');
+                } else {
+                    r.classList.remove('active');
+                }
+            });
+
+
+        }
+
+        // --- сброс теста ---
+        results.forEach(result => {
+            const refreshBtn = result.querySelector('.refresh');
+            refreshBtn?.addEventListener('click', () => {
+                resultsBlock.classList.remove('active');
+                results.forEach(r => r.classList.remove('active'));
+
+                setTimeout(() => {
+                    resultsBlock.classList.remove('active');
+                    questionsBlock.style.display = 'block';
+
+                    questions.forEach(q => {
+                        q.classList.remove('active');
+                        q.querySelectorAll('.answers__item').forEach(a => a.classList.remove('selected'));
+                    });
+
+                    answers = [];
+                    showQuestion(0);
+                }, 300);
+            });
+        });
+
+        // --- динамическая высота блока test ---
+        // function adjustTestHeight() {
+        //     const activeElement =
+        //         document.querySelector('.question.active') ||
+        //         document.querySelector('.result.active');
+        //
+        //     if (activeElement && test) {
+        //         const height = activeElement.offsetHeight;
+        //         test.style.height = `${height}px`;
+        //     }
+        // }
+        //
+        // // плавное изменение высоты через CSS
+        // if (test) {
+        //     test.style.transition = 'height 0.4s ease';
+        // }
+        //
+        // window.addEventListener('resize', adjustTestHeight);
     });
-  });
-
-  // --- динамическая высота test ---
-  // function adjustTestHeight() {
-  //   const activeElement =
-  //     document.querySelector('.question.active') ||
-  //     document.querySelector('.result.active');
-  //   if (activeElement && test) {
-  //     const height = activeElement.offsetHeight;
-  //     test.style.height = `${height}px`;
-  //   }
-  // }
-
-  // window.addEventListener('resize', adjustTestHeight);
-});
-
 
 }
 
@@ -402,6 +389,7 @@ export function footer() {
         const teamLink = document.querySelector('.footer__team-link');
         const teamBlock = document.querySelector('.footer__team-block');
         const copyright = document.querySelector('.footer__copyright');
+        const topLink = document.querySelector('.to-top');
 
         if (teamLink && teamBlock && copyright) {
             let isHovered = false;
@@ -411,6 +399,7 @@ export function footer() {
                 copyright.style.visibility = 'hidden';
                 teamBlock.style.opacity = '1';
                 teamBlock.style.visibility = 'visible';
+                topLink.classList.add('margin');
             };
 
             const hideTeam = () => {
@@ -418,6 +407,7 @@ export function footer() {
                 copyright.style.visibility = 'visible';
                 teamBlock.style.opacity = '0';
                 teamBlock.style.visibility = 'hidden';
+                topLink.classList.remove('margin');
             };
 
             const handleEnter = () => {
@@ -453,7 +443,7 @@ export function bodyClacc() {
     });
 }
 
- export function toTop() {    
+ export function toTop() {
      document.getElementById("toTopBtn").addEventListener("click", function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });

@@ -119,7 +119,7 @@
 
 
         .university {
-      
+
             &__preview {
                 height: 16.8vw;
                 padding: 3.2vw 5.33vw;
@@ -128,7 +128,7 @@
             &__label {
                 font-size: 8.53vw;
             }
-    
+
 
             &__name {
                 font-size: 4.27vw;
@@ -206,7 +206,7 @@
                     max-height: 266.7vw;
                 }
 
-    
+
             }
         }
 
@@ -215,7 +215,7 @@
                 width: 21.87vw;
                 top: 5.33vw;
                 left: 13.33vw;
-        
+
             }
 
             &--2 {
@@ -325,6 +325,7 @@
 
         .fact {
             padding: 6.67vw;
+            padding-bottom: calc(6.67vw + env(safe-area-inset-bottom));
 
             &__number {
                 font-size: 8.53vw;
