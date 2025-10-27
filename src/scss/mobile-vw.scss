@@ -320,12 +320,13 @@
             top: 2.13vw;
             left: 2.13vw;
             right: 2.13vw;
-            bottom: 2.13vw;
+            bottom: auto;
+            height: calc(96vh - env(safe-area-inset-bottom));
         }
 
         .fact {
+            max-height: calc(96vh - env(safe-area-inset-bottom));
             padding: 6.67vw;
-            padding-bottom: calc(6.67vw + env(safe-area-inset-bottom));
 
             &__number {
                 font-size: 8.53vw;
@@ -343,6 +344,7 @@
             &__content {
                 margin-top: 2.67vw;
                 gap: 2.67vw;
+                max-height: calc(73vh - env(safe-area-inset-bottom));
             }
 
             &__title {
@@ -351,8 +353,8 @@
 
             &__text {
                 font-size: 4.27vw !important;
-                max-height: calc(100vh - 13vw - 67px - 8.27vw - 58.67vw - 17vw - 2.67vw - 2.67vw - 2.67vw);
-                min-height: 100px;
+               max-height: 100%;
+                flex: 1;
                 margin-left: -4vw;
                 padding-left: 4vw;
 
@@ -360,6 +362,7 @@
                     width: 0.8vw;
                 }
             }
+
         }
     }
 
@@ -552,6 +555,11 @@
     .footer {
         padding: 8vw;
         gap: 6.13vw;
+
+        &__age {
+            left: 6.13vw;
+            bottom: 6.13vw;
+        }
 
         &__team-block {
             padding: 8vw;

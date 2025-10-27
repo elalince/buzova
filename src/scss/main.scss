@@ -266,6 +266,25 @@ header {
   justify-content: space-between;
   margin-top: 4px;
 
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex: 1;
+  }
+  &__age {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #B4B4B4;
+    min-width: 47px;
+    height: 47px;
+    border: 1px solid #B4B4B4;
+    border-radius: 100%;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -321,13 +340,16 @@ header {
     display: flex;
     align-items: center;
     gap: 41px;
+    margin: auto;
   }
 
   &__logos {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 31px;
     height: 80px;
+    flex: 1;
 
     a {
       height: 100%;
