@@ -15,9 +15,11 @@ export const path = {
         files: `${buildFolder}/files/`
     },
     src: {
-        js: `${srcFolder}/js/app.js`,
+        js: `${srcFolder}/js/**/*.js`,
+        fonts: `${srcFolder}/fonts/**/*.*`,
         images: `${srcFolder}/img/**/*.*`,
         icons: `${srcFolder}/img/icons/*.svg`,
+        svgicons: `${srcFolder}/img/*.svg`,
         scss: `${srcFolder}/scss/style.scss`,
         html: `${srcFolder}/*.html`,
         files: `${srcFolder}/files/**/*.*`
@@ -28,6 +30,7 @@ export const path = {
         html: `${srcFolder}/**/*.html`,
         images: `${srcFolder}/img/**/*.*`,
         files: `${srcFolder}/files/**/*.*`,
+        fonts: `${srcFolder}/fonts/**/*.*`,
         icons: `${srcFolder}/img/icons/**/*.*`
     },
     clean: buildFolder,

@@ -5,5 +5,5 @@ export const server = (done) => {
         },
         notify: false,
         port: 3000,
-    });
+    }, done);
 }
