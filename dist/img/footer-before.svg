@@ -1,0 +1,33 @@
+<svg width="110" height="109" viewBox="0 0 110 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_620_16485" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="109">
+<path d="M110 0H0V109H110V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_620_16485)">
+<path d="M11 -206L-197 73" stroke-miterlimit="10" stroke="white"/>
+<path d="M23 -204L-185 75" stroke-miterlimit="10" stroke="white"/>
+<path d="M35 -201L-173 78" stroke-miterlimit="10" stroke="white"/>
+<path d="M46 -199L-162 80" stroke-miterlimit="10" stroke="white"/>
+<path d="M58 -197L-150 82" stroke-miterlimit="10" stroke="white"/>
+<path d="M81 -192L-127 87" stroke-miterlimit="10" stroke="white"/>
+<path d="M93 -190L-115 89" stroke-miterlimit="10" stroke="white"/>
+<path d="M105 -187L-103 92" stroke-miterlimit="10" stroke="white"/>
+<path d="M116 -185L-92 94" stroke-miterlimit="10" stroke="white"/>
+<path d="M128 -182L-80 97" stroke-miterlimit="10" stroke="white"/>
+<path d="M140 -180L-68 99" stroke-miterlimit="10" stroke="white"/>
+<path d="M152 -178L-56 101" stroke-miterlimit="10" stroke="white"/>
+<path d="M163 -175L-45 104" stroke-miterlimit="10" stroke="white"/>
+<path d="M175 -173L-33 106" stroke-miterlimit="10" stroke="white"/>
+<path d="M187 -171L-21 108" stroke-miterlimit="10" stroke="white"/>
+<path d="M198 -168L-10 111" stroke-miterlimit="10" stroke="white"/>
+<path d="M210 -166L2 113" stroke-miterlimit="10" stroke="white"/>
+<path d="M222 -164L14 115" stroke-miterlimit="10" stroke="white"/>
+<path d="M233 -161L25 118" stroke-miterlimit="10" stroke="white"/>
+<path d="M245 -159L37 120" stroke-miterlimit="10" stroke="white"/>
+<path d="M257 -157L49 122" stroke-miterlimit="10" stroke="white"/>
+<path d="M268 -154L60 125" stroke-miterlimit="10" stroke="white"/>
+<path d="M280 -152L72 127" stroke-miterlimit="10" stroke="white"/>
+<path d="M304 -147L96 132" stroke-miterlimit="10" stroke="white"/>
+<path d="M315 -145L107 134" stroke-miterlimit="10" stroke="white"/>
+<path d="M0 0H110V109H0V0Z" stroke-miterlimit="10" stroke="white"/>
+</g>
+</svg>

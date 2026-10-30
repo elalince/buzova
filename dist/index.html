@@ -14,11 +14,11 @@
     <header>
     <div class="header">
         <nav class="header__nav">
-            <a href="">Главная</a>
-             <a href="">СПО — это…</a>
-              <a href="">Лучшие профессии СПО</a>
-               <a href="">10 колледжей</a>
-                <a href="">Тест</a>
+            <a href="#hero" class="current">Главная</a>
+             <a href="#spo">СПО — это…</a>
+              <a href="#video">Лучшие профессии СПО</a>
+               <a href="#colleges">10 колледжей</a>
+                <a href="#test">Тест</a>
         </nav>
         <div class="header__logos">
             <a href=""><img src="img/logo-girl.png"></a>
@@ -26,10 +26,9 @@
             <a href=""><img src="img/logo-minprosvet.svg"></a>
         </div>
      </div>
-
 </header>
     <main>
-        <section class="hero">
+        <section class="hero" id="hero">
   <div class="hero__title">
     <h1>10 городов / 10 колледжей / 10 профессий</h1>
   </div>
@@ -37,21 +36,26 @@
     <div>Инженер:</div>
     <div>Ольга Бузова</div>
   </div>
-  <div class="hero__buzova">
-    <img src="img/buzova.png">
+  <div class="hero__wrapper">
+    <div class="hero__image">
+       <img src="img/buzova.png">
+    </div>
+  <div class="hero__content">
+    <div class="hero__logo">
+      <img src="img/logo.png">
+    </div>
+    <div class="hero__bubble">
+      <div>Привет! Я Ольга вузова💛</div>
+      <p>Я твой личный гид по среднему профессиональному образованию! Расскажу, почему учиться в колледже — это круто, где дают реально сильные навыки и за какими специалистами охотятся работодатели. А ответишь на пару вопросов — подскажу, какая профессия твоя. Погнали?</p>
+    </div>
+    <a href="#video" class="hero__button">
+    <img src="img/play-icon.svg">
+      Смотреть видео
+    </a>
   </div>
-  <div class="hero__logo">
-    <img src="img/logo.png">
   </div>
-  <div class="hero__bable">
-    <img src="img/babl-1.png">
-  </div>
-  <a class="hero__button">
-   <img src="img/play-icon.svg">
-    Смотреть видео
-  </a>
 </section>
-        <section class="spo">
+        <section class="spo" id="spo">
   <div class="spo__title">
     <div class="spo__decor">
       <div class="spo__decor-container">
@@ -70,7 +74,12 @@
   <div class="spo__content">
     <div class="spo__image">
       <img src="img/spo-bg.png">
-      <div class="spo__babl"><img src="img/babl-2.png"></div>
+      <div class="spo__bubble">
+          <div class="spo__bubble-container">
+          <div>Спорим, мне хватит 5 фактов, чтобы доказать тебе, что СПО — это круто?</div>
+          <span>Ольга Вузова 💛</span>
+        </div>
+      </div>
     </div>
     <div class="spo__cloud spo__cloud--1" data-cloud="1" role="button" tabindex="0" aria-label="Узнать, почему СПО престижно">
       <div class="spo__cloud-content">
@@ -159,7 +168,7 @@
   </div>
 </div>
 <div class="overlay"></div>
-        <section class="video">
+        <section class="video" id="video">
   <div class="video__header">
     <div class="video__title">Лучшие инженерные <br>специальности</div>
     <p>Какую профессию выбрать, чтобы быть нарасхват? Я все узнала! Для этого отправила Ольгу Бузову тестировать ТОПовые специальности.</p>
@@ -179,7 +188,7 @@
     <div class="video__preview-list swiper-wrapper"></div>
   </div>
 </section>
-        <section class="colleges">
+        <section class="colleges" id="colleges">
   <div class="colleges__header">
     <div class="colleges__title">
       <b>10 колледжей</b>
@@ -204,7 +213,7 @@
 </div>
 <div class="overlay"></div>
 
-        <section class="test-start">
+        <section class="test-start" id="test">
     <div class="test-start__container">
         <div class="test-start__image">
             <img src="img/buzova-2.png">
@@ -218,18 +227,111 @@
         </div>
         <div class="test-start__content">
             <div class="test-start__title">
-
+                Тест-ориентация
             </div>
+            <div class="test-start__subtitle">
+                Блиц-вопросы на профориентацию
+            </div>
+            <div class="test-start__bubble">
+                <div>Какая профессия — это ты?</div>
+                <p>Уникальный случай: интервью берет сама Ольга Бузова. И не у кого-то, а у тебя, чтобы рассказать, какая профессия на самом деле твоя!</p>
+                <span>Ваша Ольга Вузова 💛</span>
+            </div>
+            <div class="test-start__list">
+                <span>Узнаешь, к чему у тебя склонность:</span>
+                <div>Химия, агро и стройка</div>
+                <div>Техника и инженерия</div> 
+                <div>Производство и управление</div>
+                <div>Мода и дизайн</div>
+            </div>
+            <a href="test.html" class="test-start__button"><img src="img/start-icon.svg">Пройти тест</a>
         </div>
     </div>
 </section>
     </main>
 
     <footer>
+    <div class="footer">
+        <div class="footer__partners">
+            <a href=""><img src="img/logo-girl.png"></a>
+            <a href=""><img src="img/logo-iri.svg"></a>
+            <a href=""><img src="img/logo-minprosvet.svg"></a>
+            <a href=""><img src="img/logo-nac.png"></a>
+            <a href=""><img src="img/logo-prof.png"></a>
+            <a href=""><img src="img/logo-sh.png"></a>
+        </div>
+        <div class="footer__content">
+            <div class="footer__info">
+                <div class="footer__age">
+                    <img src="img/age.png">
+                </div>
+                <div class="footer__copyright">
+                    <span>© 2026, Shkulev Hоlding Prоductiоn</span>
+                    <a class="footer__team-link">Команда проекта</a>
+                </div>
+            </div>
+            <div class="footer__text">
+                Проект реализован при поддержке Института развития интернета, Национальных проектов России (федеральный проект «Профессионалитет» национального проекта «Молодежь и дети»), Министерства просвещения и Министерства сельского хозяйства Российской Федерации.
+            </div>
+        </div>
+    </div>
+    <div class="team-popup">
+        <div class="team-popup__title">Команда проекта</div>
+        <ul>
+            <li>
+                <span>Креативный продюсер</span>
+                <b>Ольга Дроздова</b>
+            </li>
+            <li>
+                <span>Редактор</span>
+                <b>Максим Бойцов</b>
+            </li>
+            <li>
+                <span>Дизайнер</span>
+                <b>Майя Богатова</b>
+            </li>
+            <li>
+                <span>Разработчик</span>
+                <b>Екатерина Кроули</b>
+            </li>
+            <li>
+                <span>Корректор</span>
+                <b>Алексей Симонов</b>
+            </li>
+            <li>
+                <span>Технический директор</span>
+                <b>Денис Осипов</b>
+            </li>
+            <li>
+                <span>Арт-директор</span>
+                <b>Сергей Коровец</b>
+            </li>
+            <li>
+                <span>Руководитель отдела спецпроектов</span>
+                <b>Алена Прокофьева</b>
+            </li>
+        </ul>
+    </div>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/video-data.js"></script>
     <script src="js/colleges-data.js"></script>
+    <script src="js/team-popup.js"></script>
     <script src="js/app.js"></script>
 </footer>
+
+    <div class="plus plus--1"></div>
+    <div class="plus plus--2"></div>
+    <div class="plus plus--3"></div>
+    <div class="plus plus--4"></div>
+    <div class="plus plus--5"></div>
+    <div class="plus plus--6"></div>
+    <div class="plus plus--7"></div>
+    <div class="plus plus--8"></div>
+    <div class="plus plus--9"></div>
+    <div class="plus plus--10"></div>
+    <div class="plus plus--11"></div>
+    <div class="plus plus--12"></div>
+    <div class="plus plus--13"></div>
+    <div class="plus plus--14"></div>
 </body>
 </html>

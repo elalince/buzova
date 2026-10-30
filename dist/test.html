@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,maximum-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body class="test">
+    <div class="test__header">
+        <button class="back-link" type="button"><img src="img/back-link.svg" alt=""><span>Назад</span></button>
+        <a class="home-link" href="/"><img src="img/home.svg">На главную</a>  
+    </div>
+
+<div class="questions">
+    <div class="questions__progress">
+        <b>Вопрос</b>
+        <span class="current"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <b>1 / 5</b>
+    </div>
+    <div class="question question--1">
+        <div class="question__content">
+            <div class="question__image"><img src="img/question-image.png"></div>
+            <div class="question__bubble">
+                <span>Вопрос 1</span>
+                <b>Представь: у тебя целый свободный день, никаких уроков и обязательств. Что в итоге может затянуть тебя на несколько часов?</b>
+            </div>
+        </div>
+        <div class="answers">
+            <div class="answer answer--1">
+                <div class="answer__letter">A</div>
+                <div class="answer__text">Придумывать идеи, снимать, создавать свой проект или экспериментировать со стилем</div>
+            </div>
+            <div class="answer answer--2">
+                <div class="answer__letter">Б</div>
+                <div class="answer__text">Разбираться, как работает сложный механизм, осваивать программу или собирать что-то руками</div>
+            </div>
+            <div class="answer answer--3">
+                <div class="answer__letter">В</div>
+                <div class="answer__text">Разбираться, как работает сложный механизм, осваивать программу или собирать что-то руками</div>
+            </div>
+            <div class="answer answer--4">
+                <div class="answer__letter">Г</div>
+                <div class="answer__text">Придумывать, как заработать на идее, организовать мероприятие или запустить что-то свое</div>
+            </div>
+        </div>
+        <button class="question__button" type="button" disabled><img src="img/start-icon.svg"> Дальше</button>
+    </div>
+     <div class="question question--2" style="display: none;">
+        <div class="question__content">
+            <div class="question__image"><img src="img/question-image.png"></div>
+            <div class="question__bubble">
+                <span>Вопрос 2</span>
+                <b>Тебе нужно вместе с командой за неделю подготовить крутой школьный фестиваль. Чем будешь заниматься ты?</b>
+            </div>
+        </div>
+        <div class="answers">
+            <div class="answer answer--1">
+                <div class="answer__letter">A</div>
+                <div class="answer__text">Придумаю концепцию, оформление и то, как все будет выглядеть</div>
+            </div>
+            <div class="answer answer--2">
+                <div class="answer__letter">Б</div>
+                <div class="answer__text">Разберусь со звуком, светом, оборудованием и техническими деталями</div>
+            </div>
+            <div class="answer answer--3">
+                <div class="answer__letter">В</div>
+                <div class="answer__text">Создам общий чат, буду договариваться и заряжать команду</div>
+            </div>
+            <div class="answer answer--4">
+                <div class="answer__letter">Г</div>
+                <div class="answer__text">Создам общий чат, буду договариваться и заряжать команду</div>
+            </div>
+        </div>
+        <button class="question__button" type="button" disabled><img src="img/start-icon.svg"> Дальше</button>
+    </div>
+     <div class="question question--3" style="display: none;">
+        <div class="question__content">
+            <div class="question__image"><img src="img/question-image.png"></div>
+            <div class="question__bubble">
+                <span>Вопрос 3</span>
+                <b>Тебе предлагают попробовать себя в новом деле. Какой вызов зацепит сильнее?</b>
+            </div>
+        </div>
+        <div class="answers">
+            <div class="answer answer--1">
+                <div class="answer__letter">A</div>
+                <div class="answer__text">Создать что-то с нуля, чтобы люди сказали: «Вау, это круто!»</div>
+            </div>
+            <div class="answer answer--2">
+                <div class="answer__letter">Б</div>
+                <div class="answer__text">Получить сложную задачу и найти решение, до которого никто не додумался</div>
+            </div>
+            <div class="answer answer--3">
+                <div class="answer__letter">В</div>
+                <div class="answer__text">Помочь человеку добиться результата, которого он сам от себя не ожидал</div>
+            </div>
+            <div class="answer answer--4">
+                <div class="answer__letter">Г</div>
+                <div class="answer__text">Превратить идею в реальный проект, который принесет результат и, возможно, деньги</div>
+            </div>
+        </div>
+        <button class="question__button" type="button" disabled><img src="img/start-icon.svg"> Дальше</button>
+    </div>
+     <div class="question question--4" style="display: none;">
+        <div class="question__content">
+            <div class="question__image"><img src="img/question-image.png"></div>
+            <div class="question__bubble">
+                <span>Вопрос 4</span>
+                <b>Видео на какую тему может увлечь тебя так, что ты полвечера проведешь в телефоне?</b>
+            </div>
+        </div>
+        <div class="answers">
+            <div class="answer answer--1">
+                <div class="answer__letter">A</div>
+                <div class="answer__text">Как создают крутой дизайн, одежду, тренды или эстетичные пространства</div>
+            </div>
+            <div class="answer answer--2">
+                <div class="answer__letter">Б</div>
+                <div class="answer__text">Как работают сложные механизмы, гаджеты, роботы или научные штуки</div>
+            </div>
+            <div class="answer answer--3">
+                <div class="answer__letter">В</div>
+                <div class="answer__text">Как устроены крутые проекты, заводы, технологии или умные экосистемы</div>
+            </div>
+            <div class="answer answer--4">
+                <div class="answer__letter">Г</div>
+                <div class="answer__text">Как люди создают бизнес с нуля, управляют процессами и добиваются успеха</div>
+            </div>
+        </div>
+        <button class="question__button" type="button" disabled><img src="img/start-icon.svg"> Дальше</button>
+    </div>
+     <div class="question question--5" style="display: none;">
+        <div class="question__content">
+            <div class="question__image"><img src="img/question-image.png"></div>
+            <div class="question__bubble">
+                <span>Вопрос 5</span>
+                <b>Тебе в руки попал абсолютно новый, мегатехнологичный гаджет, о котором никто ничего не знает. Твоя первая реакция?</b>
+            </div>
+        </div>
+        <div class="answers">
+            <div class="answer answer--1">
+                <div class="answer__letter">A</div>
+                <div class="answer__text">Буду залипать на то, как он выглядит, примерять под свой стиль и фоткать для сторис</div>
+            </div>
+            <div class="answer answer--2">
+                <div class="answer__letter">Б</div>
+                <div class="answer__text">Начну сразу все тыкать, крутить настройки и проверять, что эта штука вообще умеет</div>
+            </div>
+            <div class="answer answer--3">
+                <div class="answer__letter">В</div>
+                <div class="answer__text">Пойду читать инструкцию, смотреть обзоры в интернете или расспрашивать нейронку</div>
+            </div>
+            <div class="answer answer--4">
+                <div class="answer__letter">Г</div>
+                <div class="answer__text">Сразу прикину, кому эта новинка может быть полезна, сколько стоит и как на этом сделать хайп</div>
+            </div>
+        </div>
+        <button class="question__button" type="button" disabled><img src="img/start-icon.svg"> результат</button>
+    </div>
+</div>
+<div class="result result--1" style="display: none;">
+    <div class="result__content">
+        <div class="result__left">
+            <div class="result__image">
+                <img src="img/result-1.png">
+            </div>
+            <button class="result__button" type="button"><img src="img/start-icon.svg"> Поделиться тестом</button>
+        </div>
+        <div class="result__right">
+            <div class="result__bubble">
+                <span>Готово! Тебе подходит:</span>
+                <b>Мода и дизайн</b>
+                <p>Ты человек творчества! Тебе точно нужно попробовать себя там, где создают тренды и воплощают идеи своими руками: легкая промышленность или, скажем, графический дизайн. Ниже — колледжи, где этому учат на современном оборудовании. Загляни, как там все устроено!</p>
+            </div>
+            <div class="result__summary">
+                <div class="result__details">
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Совпадение по направлениям:
+                        </div>
+                        <div class="result__details-items">
+                            <div class="result__details-item result__details-item--1">
+                                <b>Мода и дизайн</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--2">
+                                <b>Техника и инженерия</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item  result__details-item--3">
+                                <b>Химия, агро и стройка</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--4">
+                                <b>Производство и управление</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Специальности:
+                        </div>
+                        <ul>
+                            <li>Технологии моды</li>
+                            <li>Графический дизайн</li>
+                            <li>Легкая промышленность</li>
+                            <li>Столярное мастерство</li>
+                            <li>Плиточные работы</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="result__colleges">
+                    <div class="result__colleges-title">
+                        Где учат — смотри в проекте:
+                    </div>
+                    <div class="result__colleges-list">
+                        <div class="result__colleges-item" data-video-slide="2">
+                            <b>Федеральный технопарк профобразования</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                        <div class="result__colleges-item" data-video-slide="8">
+                            <b>Новгородский строительный колледж</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="result result--2" style="display: none;">
+    <div class="result__content">
+        <div class="result__left">
+            <div class="result__image">
+                <img src="img/result-2.png">
+            </div>
+            <button class="result__button" type="button"><img src="img/start-icon.svg"> Поделиться тестом</button>
+        </div>
+        <div class="result__right">
+            <div class="result__bubble">
+                <span>Готово! Тебе подходит:</span>
+                <b>Техника и инженерия</b>
+                <p>Ты прирожденный исследователь и технарь! Робототехника, аддитивные технологии, авиация или электромонтаж — тебе нравится разбираться, как устроены сложные системы, и на этом строится перспективная карьера. Ниже — колледжи, где готовят таких инженеров. Посмотри, как там учат!</p>
+            </div>
+            <div class="result__summary">
+                <div class="result__details">
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Совпадение по направлениям:
+                        </div>
+                        <div class="result__details-items">
+                            <div class="result__details-item result__details-item--2">
+                                <b>Техника и инженерия</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--1">
+                                <b>Мода и дизайн</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--4">
+                                <b>Производство и управление</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item  result__details-item--3">
+                                <b>Химия, агро и стройка</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Специальности:
+                        </div>
+                        <ul>
+                            <li>Робототехника</li>
+                            <li>Аддитивные технологии</li>
+                            <li>Ремонт авиатехники</li>
+                            <li>Электромонтаж</li>
+                            <li>IT и связь</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="result__colleges">
+                    <div class="result__colleges-title">
+                        Где учат — смотри в проекте:
+                    </div>
+                    <div class="result__colleges-list">
+                        <div class="result__colleges-item" data-video-slide="1">
+                            <b>Ульяновский авиационный колледж</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                        <div class="result__colleges-item" data-video-slide="6">
+                            <b>Казанский техникум ИТ и связи</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                        <div class="result__colleges-item" data-video-slide="10">
+                            <b>Вышневолоцкий колледж</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="result result--3" style="display: none;">
+    <div class="result__content">
+        <div class="result__left">
+            <div class="result__image">
+                <img src="img/result-3.png">
+            </div>
+            <button class="result__button" type="button"><img src="img/start-icon.svg"> Поделиться тестом</button>
+        </div>
+        <div class="result__right">
+            <div class="result__bubble">
+                <span>Готово! Тебе подходит:</span>
+                <b>Химия, агро и стройка</b>
+                <p>Твое супероружие — умение наводить порядок и видеть суть! Химический анализ, сити-фермерство и строительство: ты ценишь системный подход, надежность, высокое качество и результат, который можно потрогать. Ниже — колледжи, где твои таланты раскроются по максимуму!</p>
+            </div>
+            <div class="result__summary">
+                <div class="result__details">
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Совпадение по направлениям:
+                        </div>
+                        <div class="result__details-items">
+                            <div class="result__details-item result__details-item--2">
+                                <b>Техника и инженерия</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--1">
+                                <b>Мода и дизайн</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--4">
+                                <b>Производство и управление</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item  result__details-item--3">
+                                <b>Химия, агро и стройка</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Специальности:
+                        </div>
+                        <ul>
+                            <li>Химический анализ</li>
+                            <li>Сити-фермерство</li>
+                            <li>Агрономия</li>
+                            <li>Плиточные работы</li>
+                            <li>Строительство</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="result__colleges">
+                    <div class="result__colleges-title">
+                        Где учат — смотри в проекте:
+                    </div>
+                    <div class="result__colleges-list">
+                        <div class="result__colleges-item" data-video-slide="4">
+                            <b>Волгоградский политехнический колледж</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                        <div class="result__colleges-item" data-video-slide="9">
+                            <b>Коломенский аграрный колледж</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                        <div class="result__colleges-item" data-video-slide="7">
+                            <b>Смоленская академия градостроительства и архитектуры</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="result result--4" style="display: none;">
+    <div class="result__content">
+        <div class="result__left">
+            <div class="result__image">
+                <img src="img/result-4.png">
+            </div>
+            <button class="result__button" type="button"><img src="img/start-icon.svg"> Поделиться тестом</button>
+        </div>
+        <div class="result__right">
+            <div class="result__bubble">
+                <span>Готово! Тебе подходит:</span>
+                <b>Производство и управление</b>
+                <p>Ты умеешь управлять процессами! Современное производство, инфраструктура и технологии: ты можешь как работать в цеху, так и стать перспективным управленцем — мощный старт для серьезного дела, возможно своего! Ниже — колледжи-флагманы, где готовят таких профи.</p>
+            </div>
+            <div class="result__summary">
+                <div class="result__details">
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Совпадение по направлениям:
+                        </div>
+                        <div class="result__details-items">
+                            <div class="result__details-item result__details-item--2">
+                                <b>Техника и инженерия</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--1">
+                                <b>Мода и дизайн</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item result__details-item--4">
+                                <b>Производство и управление</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                            <div class="result__details-item  result__details-item--3">
+                                <b>Химия, агро и стройка</b>
+                                 <div class="result__details-persents">
+                                    <div class="result__details-track"><div class="result__details-slider"></div></div>
+                                    <div class="result__details-value">0%</div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result__details-list">
+                        <div class="result__details-title">
+                            Специальности:
+                        </div>
+                        <ul>
+                            <li>Металлургия</li>
+                            <li>Электромонтаж</li>
+                            <li>Аддитивные технологии</li>
+                            <li>Робототехника</li>
+                            <li>Сельхозмашиностроение</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="result__colleges">
+                    <div class="result__colleges-title">
+                        Где учат — смотри в проекте:
+                    </div>
+                    <div class="result__colleges-list">
+                        <div class="result__colleges-item" data-video-slide="5">
+                            <b>Первоуральский металлургический колледж</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                        <div class="result__colleges-item" data-video-slide="3">
+                            <b>Кузнецкий индустриальный техникум</b>
+                            <span class="result__colleges-action">Подробнее ↗</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="colleges__popup quiz-college-popup" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Информация о колледже">
+    <div class="colleges__popup-content">
+        <button class="colleges__close" type="button" aria-label="Закрыть попап"><img src="img/close.svg" alt=""></button>
+        <div class="quiz-college-popup__body"></div>
+    </div>
+</div>
+<div class="overlay quiz-college-popup__overlay"></div>
+<div class="quiz-toast" role="status" aria-live="polite"></div>
+
+<footer>
+    <div class="footer">
+        <div class="footer__content">
+        <div class="footer__info">
+            <div class="footer__age">
+                <img src="img/age.png">
+            </div>
+            <div class="footer__copyright">
+                <span>© 2026, Shkulev Hоlding Prоductiоn</span>
+                <a class="footer__team-link">Команда проекта</a>
+            </div>
+        </div>
+        <a class="footer__link" href=""><img src="img/logo-girl.png"></a>
+        </div>
+    </div>
+        <div class="team-popup">
+        <div class="team-popup__title">Команда проекта</div>
+        <ul>
+            <li>
+                <span>Креативный продюсер</span>
+                <b>Ольга Дроздова</b>
+            </li>
+            <li>
+                <span>Редактор</span>
+                <b>Максим Бойцов</b>
+            </li>
+            <li>
+                <span>Дизайнер</span>
+                <b>Майя Богатова</b>
+            </li>
+            <li>
+                <span>Разработчик</span>
+                <b>Екатерина Кроули</b>
+            </li>
+            <li>
+                <span>Корректор</span>
+                <b>Алексей Симонов</b>
+            </li>
+            <li>
+                <span>Технический директор</span>
+                <b>Денис Осипов</b>
+            </li>
+            <li>
+                <span>Арт-директор</span>
+                <b>Сергей Коровец</b>
+            </li>
+            <li>
+                <span>Руководитель отдела спецпроектов</span>
+                <b>Алена Прокофьева</b>
+            </li>
+        </ul>
+    </div>
+    </footer>
+    <script src="js/colleges-data.js"></script>
+    <script src="js/video-data.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/team-popup.js"></script>
+</body>
+</html>
